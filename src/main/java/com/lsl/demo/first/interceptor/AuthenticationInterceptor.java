@@ -4,12 +4,10 @@ import cn.hutool.core.map.MapUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.lsl.demo.first.Utils.BaseContextHandler;
-import com.lsl.demo.first.Utils.Token;
-import com.lsl.demo.first.Utils.TokenBuilder;
+import com.lsl.demo.first.Utils.token.Token;
+import com.lsl.demo.first.Utils.token.TokenBuilder;
 import org.apache.commons.httpclient.HttpStatus;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -61,6 +59,7 @@ public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+        BaseContextHandler.clear();
         super.afterCompletion(request, response, handler, ex);
     }
 

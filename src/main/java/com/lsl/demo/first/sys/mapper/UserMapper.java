@@ -1,6 +1,6 @@
 package com.lsl.demo.first.sys.mapper;
 
-import com.lsl.demo.first.sys.entity.User;
+import com.lsl.demo.first.sys.entity.UserEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author lsl_ja
  * @since 2020-01-03
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface UserMapper extends BaseMapper<UserEntity> {
 
 }

@@ -1,7 +1,5 @@
 package com.lsl.demo.first.Utils;
 
-import com.lsl.demo.first.sys.entity.User;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -31,6 +29,10 @@ public class BaseContextHandler {
             local.set(map);
         }
         return map.get(key);
+    }
+
+    public static void clear(){
+        local.remove();
     }
 
     public static String getUserId() {

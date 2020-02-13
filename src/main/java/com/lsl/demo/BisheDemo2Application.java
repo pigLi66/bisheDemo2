@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 @MapperScan("com.lsl.demo.**.**.mapper")
 @SpringBootApplication
 @EnableSwagger2Doc
-@ComponentScan("com.lsl.demo.first.**.**")
+@ComponentScan("com.lsl.demo.**.**")
 public class BisheDemo2Application {
 
 	public static void main(String[] args) {

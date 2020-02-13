@@ -29,7 +29,7 @@ public class ValidatorUtil {
      */
     public static void validateEntity(Object obj, Class<?>... groups) throws ValidationException {
         Set<ConstraintViolation<Object>> constraintViolations = validator.validate(obj, groups);
-        if (!CollectionUtil.isNotEmpty(constraintViolations)) {
+        if (CollectionUtil.isNotEmpty(constraintViolations)) {
             String msg = constraintViolations.stream()
                     .map(ConstraintViolation::getMessage)
                     .collect(Collectors.joining("\n"));

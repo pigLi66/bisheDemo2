@@ -1,8 +1,7 @@
 package com.lsl.demo.first.sys.service;
 
-import com.lsl.demo.first.Utils.Token;
 import com.lsl.demo.first.sys.Dto.LoginDto;
-import com.lsl.demo.first.sys.entity.User;
+import com.lsl.demo.first.sys.entity.UserEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,10 +12,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author lsl_ja
  * @since 2020-01-03
  */
-public interface IUserService extends IService<User> {
+public interface IUserService extends IService<UserEntity> {
 
-    User login(LoginDto dto);
+    UserEntity login(LoginDto dto);
 
-    User register(LoginDto dto);
+    void register(LoginDto dto);
 
 }

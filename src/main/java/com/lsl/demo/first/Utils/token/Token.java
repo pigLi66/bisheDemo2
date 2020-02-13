@@ -1,4 +1,4 @@
-package com.lsl.demo.first.Utils;
+package com.lsl.demo.first.Utils.token;
 
 import cn.hutool.core.util.CharsetUtil;
 import cn.hutool.crypto.Mode;

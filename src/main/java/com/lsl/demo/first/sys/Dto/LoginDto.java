@@ -16,7 +16,7 @@ public class LoginDto {
 
     @NotBlank(message = "用户名不能为空")
     @ApiModelProperty("用户名")
-    private String userName;
+    private String name;
 
     @NotBlank(message = "密码不能为空")
     @ApiModelProperty("密码")

@@ -20,7 +20,7 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("sys_user")
-public class User extends BaseEntity {
+public class UserEntity extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
@@ -32,7 +32,7 @@ public class User extends BaseEntity {
     /**
      * 用户密码
      */
-    private String pwd;
+    private String password;
 
     /**
      * 用户的类型，0表示管理员，1表示普通用户

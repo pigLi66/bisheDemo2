@@ -2,13 +2,13 @@ package com.lsl.demo.first.sys.controller;
 
 
 import com.lsl.demo.first.Utils.BaseContextHandler;
-import com.lsl.demo.first.Utils.Token;
-import com.lsl.demo.first.Utils.TokenBuilder;
+import com.lsl.demo.first.Utils.token.Token;
 import com.lsl.demo.first.Utils.ValidatorUtil;
 import com.lsl.demo.first.sys.Dto.LoginDto;
-import com.lsl.demo.first.sys.entity.User;
+import com.lsl.demo.first.sys.entity.UserEntity;
 import com.lsl.demo.first.sys.service.IUserService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Objects;
 
 /**
  * <p>
@@ -28,7 +27,7 @@ import java.util.Objects;
  * @since 2020-01-03
  */
 @Controller
-@RequestMapping()
+@RequestMapping("/user")
 @Api("用户相关接口")
 public class UserController {
 
@@ -37,34 +36,36 @@ public class UserController {
 
     @GetMapping("/login")
     public String login(){
-        return "/user/login.html";
+        return "user/login";
     }
 
-
+    @ApiOperation("登陆用")
     @PostMapping("/login")
+    @ResponseBody
     public ResponseEntity<String> judgeUser(@RequestBody LoginDto dto, HttpServletResponse response) {
+        System.out.println("login");
+        System.out.println(dto);
         ValidatorUtil.validateEntity(dto);
 
-        User user = userService.login(dto);
-        if (Objects.nonNull(user)) {
-            Token token = new Token(user.getId());
-            BaseContextHandler.setUserId(token.getUserId());
-            Cookie cookie = new Cookie("token", token.getToken());
-            cookie.setHttpOnly(false);
-            cookie.setMaxAge((int)Token.DEFAULT_TIME_OUT/1000 + 100);
-            response.addCookie(cookie);
-            return new ResponseEntity<String>("登录成功", HttpStatus.OK);
-        } else {
-            return new ResponseEntity<String>("登录失败", HttpStatus.OK);
-        }
+        UserEntity user = userService.login(dto);
+        System.out.println(user);
+
+        Token token = new Token(user.getId());
+        BaseContextHandler.setUserId(token.getUserId());
+        Cookie cookie = new Cookie("token", token.getToken());
+        cookie.setHttpOnly(false);
+        cookie.setMaxAge((int) Token.DEFAULT_TIME_OUT / 1000 + 100);
+        response.addCookie(cookie);
+        return new ResponseEntity<>("登录成功", HttpStatus.OK);
     }
 
+    @ApiOperation("注册用")
     @PostMapping("/register")
+    @ResponseBody
     public ResponseEntity<String> register(@RequestBody LoginDto dto) {
         ValidatorUtil.validateEntity(dto);
-
-        User user = userService.register(dto);
-        return new ResponseEntity<String>("注册成功", HttpStatus.OK);
+        userService.register(dto);
+        return new ResponseEntity<>("注册成功", HttpStatus.OK);
     }
 
 

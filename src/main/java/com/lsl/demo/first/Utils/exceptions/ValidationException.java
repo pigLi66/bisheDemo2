@@ -6,21 +6,17 @@ import org.apache.commons.httpclient.HttpStatus;
 /**
  * @author lisiliang
  * @since 2020/1/11
+ * 用户校验异常类
  */
 @Data
-public class ValidationException extends RuntimeException {
-
-    private static final long serialVersionUID = 1L;
-
-    private int code = HttpStatus.SC_BAD_REQUEST;
+public class ValidationException extends BaseException {
 
     public ValidationException(String message) {
-        super(message);
+        super(message, HttpStatus.SC_BAD_REQUEST);
     }
 
     public ValidationException(String message, int code) {
-        super(message);
-        this.code = code;
+        super(message, code);
     }
 
 }

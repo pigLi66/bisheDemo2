@@ -1,5 +1,6 @@
-package com.lsl.demo.first.Utils;
+package com.lsl.demo.first.Utils.exceptions;
 
+import com.lsl.demo.first.Utils.exceptions.BaseException;
 import com.lsl.demo.first.Utils.exceptions.ValidationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,12 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ValidationException.class)
     public  ResponseEntity<String> handleValidationException(ValidationException e) {
-        return new ResponseEntity<String>(e.getMessage(), HttpStatus.resolve(e.getCode()) == null ?  HttpStatus.BAD_REQUEST : HttpStatus.resolve(e.getCode()));
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.resolve(e.getCode()) == null ?  HttpStatus.BAD_REQUEST : HttpStatus.resolve(e.getCode()));
+    }
+
+    @ExceptionHandler(BaseException.class)
+    public ResponseEntity<String> handleBaseException(BaseException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.resolve(e.getCode()) == null ? HttpStatus.BAD_REQUEST : HttpStatus.resolve(e.getCode()));
     }
 
 }

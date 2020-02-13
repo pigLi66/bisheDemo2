@@ -19,12 +19,17 @@
         <java.version>1.8</java.version>
         <swagger2.version>1.9.0.RELEASE</swagger2.version>
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
-        <swagger2.version>1.9.0.RELEASE</swagger2.version>
     </properties>
 
     <dependencies>
 
-        // Apache 相关的http的类
+        <!-- 使用thymeleaf模板-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <!-- Apache 相关的http的类 -->
         <dependency>
             <groupId>commons-httpclient</groupId>
             <artifactId>commons-httpclient</artifactId>
@@ -51,35 +56,32 @@
             <artifactId>mybatis-plus-generator</artifactId>
             <version>3.3.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <version>2.3.29</version>
-        </dependency>
 
-		<!-- mybatis-plus -->
-		<dependency>
+        <!-- mybatis-plus -->
+        <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus.version}</version>
         </dependency>
 
-		<dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
 
-		<dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -90,7 +92,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-	</dependencies>
+    </dependencies>
 
     <build>
         <plugins>
