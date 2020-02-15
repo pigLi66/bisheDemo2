@@ -4,7 +4,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author lisiliang
@@ -21,5 +24,11 @@ public class LoginDto {
     @NotBlank(message = "密码不能为空")
     @ApiModelProperty("密码")
     private String password;
+
+    @NotNull(message = "type不能为空")
+    @Max(3)
+    @Min(1)
+    @ApiModelProperty("用户的类型，0表示管理员，1表示普通用户，2白表示导演，3表示演员")
+    private Integer type;
 
 }

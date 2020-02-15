@@ -28,8 +28,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
         System.out.println("service.login");
         QueryWrapper<UserEntity> wrapper = new QueryWrapper<>();
         wrapper.eq("name", dto.getName());
-        wrapper.eq("pwd", dto.getPassword());
-        wrapper.eq("type", "1");
+        wrapper.eq("password", dto.getPassword());
+        wrapper.eq("type", dto.getType());
         UserEntity user = this.baseMapper.selectOne(wrapper);
         if (Objects.isNull(user)) {
             throw new UserException("账号不存在或者密码错误");
@@ -41,12 +41,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
     public void register(LoginDto dto) {
         QueryWrapper<UserEntity> wrapper = new QueryWrapper<>();
         wrapper.eq("name", dto.getName());
-        wrapper.eq("type", "1");
+        wrapper.eq("type", dto.getType());
         UserEntity user = this.baseMapper.selectOne(wrapper);
         if (Objects.nonNull(user)) {
             throw new UserException("账号已存在");
         }
         user = ConvertUtil.sourceToTarget(dto, UserEntity.class);
+        System.out.println(dto.getType());
+        user.setType(String.valueOf(dto.getType()));
+        System.out.println(user.getType() + "\\");
         this.baseMapper.insert(user);
     }
 }

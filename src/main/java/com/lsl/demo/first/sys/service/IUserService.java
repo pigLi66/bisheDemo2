@@ -14,8 +14,17 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserService extends IService<UserEntity> {
 
+    /**
+     * 登陆判断
+     * @param dto
+     * @return
+     */
     UserEntity login(LoginDto dto);
 
+    /**
+     * 注册判断
+     * @param dto
+     */
     void register(LoginDto dto);
 
 }

@@ -34,7 +34,7 @@ public class UserEntity extends BaseEntity {
     private String password;
 
     /**
-     * 用户的类型，0表示管理员，1表示普通用户
+     * 用户的类型，0表示管理员，1表示普通用户，2白表示导演，3表示演员
      */
     private String type;
 

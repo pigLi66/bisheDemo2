@@ -26,7 +26,7 @@ public class CodeGenerator {
     private static final String URL = "jdbc:mysql://47.103.198.46:3306/stu";
     private static final String user = "lisiliang";
     private static final String pwd = "123456";
-    private static final String superEntityClass = "com.lsl.demo.first.Utils.entity.BaseEntity";
+    private static final String superEntityClass = "com.lsl.demo.first.utils.entity.BaseEntity";
     private static final String superControllerClass = null;
     private static final String packName = "com.lsl.demo.first";
     private static final String author = "lsl_ja";
