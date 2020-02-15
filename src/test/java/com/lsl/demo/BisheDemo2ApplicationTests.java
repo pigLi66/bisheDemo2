@@ -9,6 +9,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 class BisheDemo2ApplicationTests {
 
 	@Test
+	void testService(){
+
+	}
+
+	@Test
 	void contextLoads() {
 		byte[] key = SecureUtil.generateKey(SymmetricAlgorithm.AES.getValue()).getEncoded();
 		System.out.println(new String(key));

@@ -2,7 +2,10 @@
 mybatis-plus:
   mapper-locations: classpath:mapper/*/*.xml
   typeAliasesPackage: com.lsl.demo.*.*.entity
-
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
 spring:
   profiles:
     active: dev

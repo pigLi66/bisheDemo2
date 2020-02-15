@@ -9,34 +9,39 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ * 字典表
  * </p>
  *
  * @author lsl_ja
- * @since 2020-01-03
+ * @since 2020-02-13
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("sys_user")
-public class UserEntity extends BaseEntity {
+@TableName("sys_dict")
+public class DictEntity extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * 用户id
+     * 字典编码
      */
-    private String name;
+    private String dictKey;
 
     /**
-     * 用户密码
+     * 字典名称
      */
-    private String password;
+    private String dictValue;
 
     /**
-     * 用户的类型，0表示管理员，1表示普通用户
+     * 字典值编码
      */
-    private String type;
+    private String vKey;
+
+    /**
+     * 字典值
+     */
+    private String vValue;
 
 
 }

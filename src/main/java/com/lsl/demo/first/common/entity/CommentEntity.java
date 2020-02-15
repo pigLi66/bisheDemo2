@@ -1,6 +1,4 @@
-package com.lsl.demo.first.sys.entity;
-
-import com.baomidou.mybatisplus.annotation.TableName;
+package com.lsl.demo.first.common.entity;
 
 import com.lsl.demo.first.utils.entity.BaseEntity;
 import lombok.Data;
@@ -9,34 +7,33 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 
+ * 电影评论表
  * </p>
  *
  * @author lsl_ja
- * @since 2020-01-03
+ * @since 2020-02-13
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("sys_user")
-public class UserEntity extends BaseEntity {
+public class CommentEntity extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
     /**
+     * 电影id
+     */
+    private String movieId;
+
+    /**
      * 用户id
      */
-    private String name;
+    private String userId;
 
     /**
-     * 用户密码
+     * 用户评论
      */
-    private String password;
-
-    /**
-     * 用户的类型，0表示管理员，1表示普通用户
-     */
-    private String type;
+    private String comment;
 
 
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lsl.demo.first.sys.mapper.DictMapper">
+
+    <select id="getDictList" resultType="java.lang.String">
+        select distinct dict_Key
+        from sys_dict
+        where
+                valid = "0"
+            and v_key = "0" ;
+    </select>
+
+    <select id="getVList" parameterType="java.lang.String" resultType="com.lsl.demo.first.sys.dto.DictDto">
+        select dict_key as dictKey,
+                dict_Value as dictValue,
+                v_key as vKey,
+                v_value as vValue
+        from sys_dict
+        where
+                valid = '0'
+            and dict_key = #{dictKey}
+            and v_key <![CDATA[<>]]> '0';
+    </select>
+
+</mapper>
