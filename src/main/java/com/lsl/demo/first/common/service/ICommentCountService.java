@@ -21,17 +21,17 @@ public interface ICommentCountService extends IService<CommentCountEntity> {
     String save(CommentCountDto dto);
 
     /**
-     * 删除用户某个行为
-     * @param dto
-     */
-    void delete(CommentCountDto dto);
-
-    /**
      * 获取评论下特定用户的所有行为统计
      * @param commentId
      * @param type
      * @return
      */
     Integer count(String commentId, String type);
+
+    /**
+     * 删除用户某个行为
+     * @param dto
+     */
+    void delete(CommentCountDto dto);
 
 }

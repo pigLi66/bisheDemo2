@@ -26,27 +26,7 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, CommentEntity
     public String saveComment(CommentDto dto) {
         CommentEntity entity = ConvertUtil.sourceToTarget(dto, CommentEntity.class);
         this.baseMapper.insert(entity);
-
-        QueryWrapper<CommentEntity> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("movie_id", dto.getMovieId());
-        queryWrapper.eq("user_id", dto.getUserId());
-        queryWrapper.eq("comment", dto.getComment());
-        entity = this.baseMapper.selectOne(queryWrapper);
         return entity.getId();
-    }
-
-    @Override
-    public void deleteMovieComment(String movieId) {
-        QueryWrapper<CommentEntity> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("movie_id", movieId);
-        this.baseMapper.delete(queryWrapper);
-    }
-
-    @Override
-    public void deleteUserComment(String userId) {
-        QueryWrapper<CommentEntity> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("user_id", userId);
-        this.baseMapper.delete(queryWrapper);
     }
 
     @Override
@@ -63,5 +43,19 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, CommentEntity
         queryWrapper.eq("valid", 0);
         queryWrapper.eq("movie_id", movieId);
         return this.baseMapper.selectList(queryWrapper);
+    }
+
+    @Override
+    public void deleteMovieComment(String movieId) {
+        QueryWrapper<CommentEntity> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("movie_id", movieId);
+        this.baseMapper.delete(queryWrapper);
+    }
+
+    @Override
+    public void deleteUserComment(String userId) {
+        QueryWrapper<CommentEntity> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("user_id", userId);
+        this.baseMapper.delete(queryWrapper);
     }
 }

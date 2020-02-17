@@ -33,12 +33,11 @@ public class CommentCountServiceImpl extends ServiceImpl<CommentCountMapper, Com
         if (Objects.isNull(entity)) {
             entity = ConvertUtil.sourceToTarget(dto, CommentCountEntity.class);
             this.baseMapper.insert(entity);
-            return this.baseMapper.selectOne(queryWrapper).getId();
         } else {
             entity.setValid("0");
             this.baseMapper.updateById(entity);
-            return entity.getId();
         }
+        return entity.getId();
     }
 
     @Override

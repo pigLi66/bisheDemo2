@@ -21,9 +21,9 @@ public class MovieEntity extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 电影名
+     * 电影名，不具有唯一性
      */
-    private String mName;
+    private String movieName;
 
     /**
      * 导演id

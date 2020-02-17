@@ -58,6 +58,7 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfoEnt
     public UserInfoEntity getUserInfo(String userId) {
         QueryWrapper<UserInfoEntity> wrapper = new QueryWrapper<>();
         wrapper.eq("user_id", userId);
+        wrapper.eq("valid", 0);
         return this.baseMapper.selectOne(wrapper);
     }
 

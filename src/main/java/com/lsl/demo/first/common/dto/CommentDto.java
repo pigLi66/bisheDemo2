@@ -1,5 +1,7 @@
 package com.lsl.demo.first.common.dto;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -8,6 +10,8 @@ import javax.validation.constraints.NotBlank;
  * @author lisiliang
  * @since 2020/2/15
  */
+
+@ApiModel
 @Data
 public class CommentDto {
 
@@ -26,6 +30,7 @@ public class CommentDto {
     /**
      * 用户评论
      */
+    @ApiModelProperty("用户评论内容")
     @NotBlank(message = "评论不能为空")
     private String comment;
 

@@ -1,5 +1,6 @@
 package com.lsl.demo.first.common.dto;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -12,6 +13,7 @@ import javax.validation.constraints.NotNull;
  * @author lisiliang
  * @since 2020/2/15
  */
+@ApiModel
 @Data
 public class LevelDto {
 
@@ -29,13 +31,14 @@ public class LevelDto {
     @ApiModelProperty("用户id")
     private String userId;
 
+
     /**
      * 评级（1--10）
      */
     @Max(10)
     @Min(1)
     @NotNull
-    @ApiModelProperty("电影评级")
+    @ApiModelProperty("电影评级 1 - 10")
     private Integer level;
 
 }

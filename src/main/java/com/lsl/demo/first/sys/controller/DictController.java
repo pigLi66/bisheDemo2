@@ -27,7 +27,7 @@ import java.util.Objects;
  */
 @RestController
 @RequestMapping("/sys/dict")
-@Api("字典接口")
+@Api(value = "字典接口")
 public class DictController {
 
     @Autowired
@@ -42,14 +42,13 @@ public class DictController {
         return new ResponseEntity<>(this.dictService.saveDict(dictValue), HttpStatus.OK);
     }
 
-    @ApiOperation("更新字典，根据dictKey进行修改")
-    @PutMapping
-    public ResponseEntity<String> upDictValue(@RequestParam("dictKey") String dictKey, @RequestParam("dictValue") String dictValue) {
-        if (Objects.isNull(dictKey) || Objects.isNull(dictValue)) {
-            throw  new BusinessException("字典不能为空");
+    @ApiOperation("新增一个字典的值")
+    @PostMapping("/v")
+    public ResponseEntity<String> saveV(@RequestParam("dictKey") String dictKey, @RequestParam("vValue") String vValue) {
+        if (Objects.isNull(dictKey) || Objects.isNull(vValue)) {
+            throw  new BusinessException("参数不能为空");
         }
-        this.dictService.upDictValue(dictKey, dictValue);
-        return new ResponseEntity<>(Operation.SUCCESS.get(), HttpStatus.OK);
+        return new ResponseEntity<>(this.dictService.saveV(dictKey, vValue), HttpStatus.OK);
     }
 
     @ApiOperation("根据dcitKey 字典键获取字典值")
@@ -61,23 +60,23 @@ public class DictController {
         return new ResponseEntity<>(this.dictService.getDictValue(dictKey), HttpStatus.OK);
     }
 
-    @ApiOperation("根据dictKey 删除字典")
-    @DeleteMapping
-    public ResponseEntity<String> deleteDictByKey(String dictKey) {
-        if (Objects.isNull(dictKey)) {
-            throw new BusinessException("字典键不能为空");
+    @ApiOperation("根据dictKey 和vKey 获取vValue")
+    @GetMapping("/v")
+    public ResponseEntity<String> getVValue(String dictKey, String vKey) {
+        if (Objects.isNull(dictKey) || Objects.isNull(vKey)) {
+            throw new BusinessException("dictKey 和vKey 不能为空");
         }
-        this.dictService.deleteDictByKey(dictKey);
-        return new ResponseEntity<>(Operation.SUCCESS.get(), HttpStatus.OK);
+        return new ResponseEntity<>(this.dictService.getVValue(dictKey, vKey), HttpStatus.OK);
     }
 
-    @ApiOperation("新增一个字典的值")
-    @PostMapping("/v")
-    public ResponseEntity<String> saveV(@RequestParam("dictKey") String dictKey, @RequestParam("vValue") String vValue) {
-        if (Objects.isNull(dictKey) || Objects.isNull(vValue)) {
-            throw  new BusinessException("参数不能为空");
+    @ApiOperation("更新字典，根据dictKey进行修改")
+    @PutMapping
+    public ResponseEntity<String> upDictValue(@RequestParam("dictKey") String dictKey, @RequestParam("dictValue") String dictValue) {
+        if (Objects.isNull(dictKey) || Objects.isNull(dictValue)) {
+            throw  new BusinessException("字典不能为空");
         }
-        return new ResponseEntity<>(this.dictService.saveV(dictKey, vValue), HttpStatus.OK);
+        this.dictService.upDictValue(dictKey, dictValue);
+        return new ResponseEntity<>(Operation.SUCCESS.get(), HttpStatus.OK);
     }
 
     @ApiOperation("根据dictKey 和vKey 更新vValue")
@@ -88,13 +87,14 @@ public class DictController {
         return new ResponseEntity<>(Operation.SUCCESS.get(), HttpStatus.OK);
     }
 
-    @ApiOperation("根据dictKey 和vKey 获取vValue")
-    @GetMapping("/v")
-    public ResponseEntity<String> getVValue(String dictKey, String vKey) {
-        if (Objects.isNull(dictKey) || Objects.isNull(vKey)) {
-            throw new BusinessException("dictKey 和vKey 不能为空");
+    @ApiOperation("根据dictKey 删除字典")
+    @DeleteMapping
+    public ResponseEntity<String> deleteDictByKey(String dictKey) {
+        if (Objects.isNull(dictKey)) {
+            throw new BusinessException("字典键不能为空");
         }
-        return new ResponseEntity<>(this.dictService.getVValue(dictKey, vKey), HttpStatus.OK);
+        this.dictService.deleteDictByKey(dictKey);
+        return new ResponseEntity<>(Operation.SUCCESS.get(), HttpStatus.OK);
     }
 
     @ApiOperation("根据id 删除字典值")

@@ -24,18 +24,6 @@ public interface ICommentService extends IService<CommentEntity> {
     String saveComment(CommentDto dto);
 
     /**
-     * 删除一个电影下的所有评论
-     * @param movieId
-     */
-    void deleteMovieComment(String movieId);
-
-    /**
-     * 删除一个用户的所有评论
-     * @param userId
-     */
-    void deleteUserComment(String userId);
-
-    /**
      * 获取一个用户的所有评论
      * @param userId
      * @return
@@ -48,5 +36,17 @@ public interface ICommentService extends IService<CommentEntity> {
      * @return
      */
     List<CommentEntity> getMovieCommentList(String movieId);
+
+    /**
+     * 删除一个电影下的所有评论
+     * @param movieId
+     */
+    void deleteMovieComment(String movieId);
+
+    /**
+     * 删除一个用户的所有评论
+     * @param userId
+     */
+    void deleteUserComment(String userId);
 
 }

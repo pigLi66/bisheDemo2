@@ -38,7 +38,6 @@ public class LevelServiceImpl extends ServiceImpl<LevelMapper, LevelEntity> impl
         } else {
             entity = ConvertUtil.sourceToTarget(dto, LevelEntity.class);
             this.baseMapper.insert(entity);
-            entity = this.baseMapper.selectOne(queryWrapper);
         }
 
         return entity.getId();
