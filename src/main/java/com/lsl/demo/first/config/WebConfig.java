@@ -11,7 +11,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @since 2020/2/12
  */
 
-/*
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
@@ -21,8 +20,6 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authenticationInterceptor).excludePathPatterns("/swagger-ui.html",
-                "/swagger-resources/**", "/v2/api-docs", "/webjars/springfox-swagger-ui/**",
-                "/user/login");
+                "/swagger-resources/**", "/v2/api-docs", "/webjars/springfox-swagger-ui/**");
     }
 }
-*/

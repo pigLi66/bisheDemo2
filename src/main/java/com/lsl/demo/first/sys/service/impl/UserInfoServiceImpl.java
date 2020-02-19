@@ -47,11 +47,20 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfoEnt
     }
 
     @Override
-    public void upUserInfo(UserInfoDto dto) {
+    public String upUserInfo(UserInfoDto dto) {
         UserInfoEntity entity = ConvertUtil.sourceToTarget(dto, UserInfoEntity.class);
-        UpdateWrapper<UserInfoEntity> wrapper = new UpdateWrapper<>();
-        wrapper.eq("user_id", dto.getUserId());
-        this.baseMapper.update(entity, wrapper);
+
+        QueryWrapper<UserInfoEntity> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("user_id", dto.getUserId());
+        UserInfoEntity entityDB = this.baseMapper.selectOne(queryWrapper);
+
+        if (Objects.isNull(entityDB))  {
+            this.baseMapper.insert(entity);
+        } else {
+            entity.setId(entityDB.getId());
+            this.baseMapper.updateById(entity);
+        }
+        return entity.getId();
     }
 
     @Override

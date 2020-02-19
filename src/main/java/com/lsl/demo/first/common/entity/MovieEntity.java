@@ -50,5 +50,9 @@ public class MovieEntity extends BaseEntity {
      */
     private String profile;
 
+    /**
+     * 图片url
+     */
+    private String pictureUrl;
 
 }

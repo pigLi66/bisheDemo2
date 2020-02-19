@@ -38,7 +38,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
     }
 
     @Override
-    public void register(LoginDto dto) {
+    public String register(LoginDto dto) {
         QueryWrapper<UserEntity> wrapper = new QueryWrapper<>();
         wrapper.eq("name", dto.getName());
         wrapper.eq("type", dto.getType());
@@ -51,5 +51,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
         user.setType(String.valueOf(dto.getType()));
         System.out.println(user.getType() + "\\");
         this.baseMapper.insert(user);
+        return user.getId();
     }
 }

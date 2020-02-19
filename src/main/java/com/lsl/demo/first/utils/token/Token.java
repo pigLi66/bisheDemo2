@@ -18,11 +18,11 @@ import java.util.Date;
 public class Token {
 
     public static final String HEADER_TOKEN = "token";
-    public static final long DEFAULT_TIME_OUT = 86400000;
+    public static final Long DEFAULT_TIME_OUT = 86400000L;
 
     private String token;
     private String userId;
-    private Date date;
+    private Date timeOut;
 
     static final AES aes = new AES(Mode.CTS, Padding.PKCS5Padding, "0CoJUm6Qyw8W8jud".getBytes(), "0909090405060708".getBytes());
 
@@ -32,7 +32,7 @@ public class Token {
 
     public Token(String userId, Date date) {
         this.userId = userId;
-        this.date = date;
+        this.timeOut = date;
         enToken();
     }
 
@@ -41,8 +41,8 @@ public class Token {
         deToken();
     }
 
-    public Date getDate() {
-        return this.date;
+    public Date getTimeOut() {
+        return this.timeOut;
     }
 
     public String getUserId() {
@@ -50,14 +50,14 @@ public class Token {
     }
 
     private void enToken() {
-        String s = this.userId + ":" + Long.toString(this.date.getTime());
+        String s = this.userId + ":" + Long.toString(this.timeOut.getTime());
         this.token = aes.encryptHex(s);
     }
 
     private void deToken() {
         String[] s = aes.decryptStr(token, CharsetUtil.CHARSET_UTF_8).split(":");
         this.userId = s[0];
-        this.date = new Date(Long.parseLong(s[1]));
+        this.timeOut = new Date(Long.parseLong(s[1]));
     }
 
     public void refresh() {
@@ -65,7 +65,7 @@ public class Token {
     }
 
     public void refresh(Date date) {
-        this.date = date;
+        this.timeOut = date;
         deToken();
     }
 

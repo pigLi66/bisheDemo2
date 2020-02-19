@@ -1,7 +1,7 @@
 package com.lsl.demo.first.sys.controller;
 
 
-import com.lsl.demo.first.utils.BaseContextHandler;
+import com.lsl.demo.first.sys.dto.LoginResponse;
 import com.lsl.demo.first.utils.token.Token;
 import com.lsl.demo.first.utils.validate.ValidatorUtil;
 import com.lsl.demo.first.sys.dto.LoginDto;
@@ -13,8 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * <p>
@@ -25,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  * @since 2020-01-03
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/sys/user")
 @Api("用户相关接口")
 public class UserController {
 
@@ -34,7 +32,7 @@ public class UserController {
 
     @ApiOperation("登陆用")
     @PostMapping("/login")
-    public ResponseEntity<String> judgeUser(@RequestBody LoginDto dto, HttpServletResponse response) {
+    public ResponseEntity<LoginResponse> login(@RequestBody LoginDto dto) {
         System.out.println("login");
         System.out.println(dto);
         ValidatorUtil.validateEntity(dto);
@@ -43,20 +41,31 @@ public class UserController {
         System.out.println(user);
 
         Token token = new Token(user.getId());
-        BaseContextHandler.setUserId(token.getUserId());
+        LoginResponse loginResponse = new LoginResponse();
+        loginResponse.setMessage("登陆成功");
+        loginResponse.setTimeOut(Token.DEFAULT_TIME_OUT.toString());
+        loginResponse.setToken(token.getToken());
+        return ResponseEntity.ok(loginResponse);
+
+        /*
         Cookie cookie = new Cookie("token", token.getToken());
         cookie.setHttpOnly(false);
         cookie.setMaxAge((int) Token.DEFAULT_TIME_OUT / 1000 + 100);
         response.addCookie(cookie);
-        return ResponseEntity.ok("登录成功");
+        */
     }
 
     @ApiOperation("注册用")
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody LoginDto dto) {
+    public ResponseEntity<LoginResponse> register(@RequestBody LoginDto dto) {
         ValidatorUtil.validateEntity(dto);
-        userService.register(dto);
-        return ResponseEntity.ok("注册成功");
+        String userId = userService.register(dto);
+        Token token = new Token(userId);
+        LoginResponse loginResponse = new LoginResponse();
+        loginResponse.setToken(token.getToken());
+        loginResponse.setTimeOut(token.getTimeOut().toString());
+        loginResponse.setMessage("注册成功");
+        return ResponseEntity.ok(loginResponse);
     }
 
 

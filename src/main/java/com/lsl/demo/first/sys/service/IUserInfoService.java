@@ -25,7 +25,7 @@ public interface IUserInfoService extends IService<UserInfoEntity> {
      * 修改用户信息
      * @param dto
      */
-    void upUserInfo(UserInfoDto dto);
+    String upUserInfo(UserInfoDto dto);
 
     /**
      * 获取用户信息

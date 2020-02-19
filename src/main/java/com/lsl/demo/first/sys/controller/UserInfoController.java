@@ -34,7 +34,7 @@ public class UserInfoController {
 
     @ApiOperation("新增用户信息")
     @PostMapping
-    public ResponseEntity<String> saveUserInfo(UserInfoDto dto) {
+    public ResponseEntity<String> saveUserInfo(@RequestBody UserInfoDto dto) {
         ValidatorUtil.validateEntity(dto, AddGroup.class);
         return new ResponseEntity<>(this.userInfoService.saveUserInfo(dto), HttpStatus.OK);
     }
@@ -52,11 +52,12 @@ public class UserInfoController {
     }
 
     @PutMapping
-    @ApiOperation("更新用户信息")
-    public ResponseEntity<String> upUserInfo(UserInfoDto dto) {
+    @ApiOperation("保存或者更新用户信息")
+    public ResponseEntity<String> upUserInfo(@RequestBody UserInfoDto dto) {
         ValidatorUtil.validateEntity(dto, UpdateGroup.class);
-        this.userInfoService.upUserInfo(dto);
-        return new ResponseEntity<>(Operation.SUCCESS.get(), HttpStatus.OK);
+        dto.setUserId(BaseContextHandler.getUserId());
+        System.out.println(dto);
+        return new ResponseEntity<>(this.userInfoService.upUserInfo(dto), HttpStatus.OK);
     }
 
     @ApiOperation("根据id删除用户信息")

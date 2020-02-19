@@ -1,12 +1,14 @@
 package com.lsl.demo.first.interceptor;
 
 import cn.hutool.core.map.MapUtil;
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.lsl.demo.first.utils.BaseContextHandler;
 import com.lsl.demo.first.utils.token.Token;
 import com.lsl.demo.first.utils.token.TokenBuilder;
 import org.apache.commons.httpclient.HttpStatus;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -21,7 +23,7 @@ import java.util.Objects;
  * @author lisiliang
  * @since 2020/1/10
  */
-@Component
+@Configuration
 public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
 
     // 留一个以后可能用的东西，以后实施去除keep-alive 让每次的http 都重新进行请求，检测option
@@ -34,18 +36,19 @@ public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
         response.setHeader("Access-Control-Expose-Headers", "Content-Disposition");
 
         if (request.getMethod().equalsIgnoreCase("option")) {
-            return resp(response, HttpStatus.getStatusText(HttpStatus.SC_OK), HttpStatus.SC_OK);
+            return !resp(response, HttpStatus.getStatusText(HttpStatus.SC_OK), HttpStatus.SC_OK);
         }
 
         String t = request.getHeader(Token.HEADER_TOKEN);
-        if (Objects.isNull(t)) {
+
+        if (StrUtil.isBlank(t)) {
             return resp(response, HttpStatus.getStatusText(HttpStatus.SC_NON_AUTHORITATIVE_INFORMATION), HttpStatus.SC_NON_AUTHORITATIVE_INFORMATION);
         }
 
         Token token = TokenBuilder.buildToken(t);
 
         // token 已经失效
-        if (new Date().compareTo(token.getDate()) > 0) {
+        if (new Date().compareTo(token.getTimeOut()) > 0) {
             return resp(response, HttpStatus.getStatusText(HttpStatus.SC_OK), HttpStatus.SC_OK);
         } else {
             token.refresh();
@@ -64,7 +67,8 @@ public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
     }
 
     private boolean resp(HttpServletResponse response, String msg, int code) throws Exception{
-        response.setCharacterEncoding("utf-8");
+        return true;
+/*        response.setCharacterEncoding("utf-8");
         response.setContentType("application/json; charset=utf-8");
         response.setStatus(HttpStatus.SC_OK);
         Map<String, Object> map = MapUtil.newHashMap();
@@ -75,7 +79,7 @@ public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
         JSONObject object = JSONUtil.parseFromMap(map);
         writer.write(object.toString());
         writer.close();
-        return false;
+        return false;*/
     }
 
 }

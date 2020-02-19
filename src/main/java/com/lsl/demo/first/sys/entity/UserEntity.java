@@ -38,5 +38,9 @@ public class UserEntity extends BaseEntity {
      */
     private String type;
 
+    /**
+     * 图片url
+     */
+    private String pictureUrl;
 
 }

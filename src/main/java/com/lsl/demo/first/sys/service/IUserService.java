@@ -25,6 +25,6 @@ public interface IUserService extends IService<UserEntity> {
      * 注册判断
      * @param dto
      */
-    void register(LoginDto dto);
+    String register(LoginDto dto);
 
 }
