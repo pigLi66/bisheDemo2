@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import java.time.LocalDate;
+
 /**
  * <p>
  * 电影表
@@ -54,5 +56,10 @@ public class MovieEntity extends BaseEntity {
      * 图片url
      */
     private String pictureUrl;
+
+    /**
+     * 电影上映时间
+     */
+    private LocalDate releaseTime;
 
 }
