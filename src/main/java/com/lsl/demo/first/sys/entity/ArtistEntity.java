@@ -9,17 +9,17 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 用户信息表
+ * 
  * </p>
  *
  * @author lsl_ja
- * @since 2020-02-25
+ * @since 2020-02-26
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("sys_user_info")
-public class UserInfoEntity extends BaseEntity {
+@TableName("sys_artist")
+public class ArtistEntity extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,38 +29,38 @@ public class UserInfoEntity extends BaseEntity {
     private String realName;
 
     /**
-     * 邮箱
+     * 性别
      */
-    private String email;
+    private String sex;
 
     /**
-     * 电话
-     */
-    private String phone;
-
-    /**
-     * 用户主键
-     */
-    private String userId;
-
-    /**
-     * 用户名
-     */
-    private String userName;
-
-    /**
-     * 用户简介
-     */
-    private String profile;
-
-    /**
-     * 出生年月日
+     * 出生日期
      */
     private LocalDate birthday;
 
     /**
-     * 性别：0表示男，1表示女
+     * 出生地
      */
-    private String sex;
+    private String birthPlace;
+
+    /**
+     * 职业
+     */
+    private String position;
+
+    /**
+     * 简介
+     */
+    private String profile;
+
+    /**
+     * 用户id
+     */
+    private String userId;
+
+    /**
+     * 豆瓣上面的id
+     */
+    private String doubanId;
 
 }

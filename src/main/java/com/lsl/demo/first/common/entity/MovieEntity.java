@@ -23,7 +23,7 @@ public class MovieEntity extends BaseEntity {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 电影名，不具有唯一性
+     * 电影名
      */
     private String movieName;
 
@@ -53,13 +53,18 @@ public class MovieEntity extends BaseEntity {
     private String profile;
 
     /**
-     * 图片url
+     * 电影图片的地址
      */
     private String pictureUrl;
 
     /**
-     * 电影上映时间
+     * 上映时间
      */
     private LocalDate releaseTime;
+
+    /**
+     * 豆瓣上面的id
+     */
+    private String doubanId;
 
 }
