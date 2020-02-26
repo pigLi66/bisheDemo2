@@ -24,8 +24,6 @@ public class MovieBeanResolver {
             throw new ResolverException("json解析异常");
         }
         List<MovieBean> rs = data.toJavaList(MovieBean.class);
-        rs.forEach(System.out::println);
-        Usually.printCutLine();
         return rs;
     }
 

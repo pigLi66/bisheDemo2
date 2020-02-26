@@ -5,18 +5,18 @@ import cn.hutool.crypto.symmetric.SymmetricAlgorithm;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 @SpringBootTest
 class BisheDemo2ApplicationTests {
 
 	@Test
 	void testService(){
-
+		System.out.println("???????");
 	}
 
 	@Test
 	void contextLoads() {
-		byte[] key = SecureUtil.generateKey(SymmetricAlgorithm.AES.getValue()).getEncoded();
-		System.out.println(new String(key));
 	}
 
 }

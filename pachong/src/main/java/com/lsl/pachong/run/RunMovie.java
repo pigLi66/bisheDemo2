@@ -27,10 +27,9 @@ public class RunMovie {
             throw new PaChongException("爬虫失误");
         }
         // 获取电影信息，包括 导演、演员、类型、片长等
-        MovieInfoEntity movieInfoEntity = MovieInfoResolver.resolver(document);
-        System.out.println(movieInfoEntity);
-        Usually.printCutLine();
-        return movieInfoEntity;
+        MovieInfoEntity rs = MovieInfoResolver.resolver(document);
+        Usually.print(rs);
+        return rs;
     }
 
 }

@@ -12,11 +12,6 @@
     <artifactId>admin</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>pachong</artifactId>
-            <version>${project.version}</version>
-        </dependency>
     </dependencies>
 
 </project>

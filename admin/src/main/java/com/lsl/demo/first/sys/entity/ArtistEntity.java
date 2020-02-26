@@ -63,4 +63,9 @@ public class ArtistEntity extends BaseEntity {
      */
     private String doubanId;
 
+    /**
+     * 图片url
+     */
+    private String pictureUrl;
+
 }

@@ -2,6 +2,7 @@ package com.lsl.pachong.run;
 
 import com.lsl.pachong.entity.MovieBean;
 import com.lsl.pachong.exceptions.PaChongException;
+import com.lsl.pachong.utils.common.Usually;
 import com.lsl.pachong.utils.resolver.MovieBeanResolver;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
@@ -49,7 +50,9 @@ public class RunSearchSubjects {
             throw new PaChongException("状态码异常url=" + urlPath + start + " 状态码=" + connection.getResponseCode());
         }
 
-        return MovieBeanResolver.resolve(connection.getInputStream());
+        List<MovieBean> rs =  MovieBeanResolver.resolve(connection.getInputStream());
+        Usually.print(rs);
+        return rs;
     }
 
 }
