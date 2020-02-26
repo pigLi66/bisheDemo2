@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e98f5943-2793-4cf8-aa6c-57b308851a13" name="Default Changelist1" comment="">
+      <change beforePath="$PROJECT_DIR$/pachong/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pachong/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/BisheDemo2Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/BisheDemo2Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/controller/CommentCountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/controller/CommentCountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/controller/LevelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/controller/LevelController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/controller/MovieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/dto/CommentCountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/dto/CommentCountDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/dto/CommentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/dto/CommentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/dto/LevelDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/dto/LevelDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/dto/MovieDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/dto/MovieDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/entity/CommentCountEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/entity/CommentCountEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/entity/CommentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/entity/CommentEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/entity/LevelEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/entity/LevelEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/entity/MovieEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/entity/MovieEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/mapper/CommentCountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/mapper/CommentCountMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/mapper/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/mapper/CommentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/mapper/LevelMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/mapper/LevelMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/mapper/MovieMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/mapper/MovieMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/service/ICommentCountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/service/ICommentCountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/service/ICommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/service/ICommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/service/ILevelService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/service/ILevelService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/service/IMovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/service/IMovieService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/service/impl/CommentCountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/service/impl/CommentCountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/service/impl/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/service/impl/LevelServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/service/impl/LevelServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/common/service/impl/MovieServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/service/impl/MovieServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/interceptor/AuthenticationInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/interceptor/AuthenticationInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/controller/ArtistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/controller/ArtistController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/controller/DictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/controller/DictController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/controller/UserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/controller/UserInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/dto/DictDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/dto/DictDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/dto/LoginDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/dto/LoginDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/dto/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/dto/LoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/dto/UserInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/dto/UserInfoDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/entity/ArtistEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/entity/ArtistEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/entity/DictEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/entity/DictEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/entity/UserInfoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/entity/UserInfoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/mapper/ArtistMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/mapper/ArtistMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/mapper/DictMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/mapper/DictMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/mapper/UserInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/mapper/UserInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/service/IArtistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/service/IArtistService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/service/IDictService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/service/IDictService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/service/IUserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/service/IUserInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/service/impl/ArtistServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/service/impl/ArtistServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/service/impl/DictServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/service/impl/DictServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/service/impl/UserInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/service/impl/UserInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/sys/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/utils/BaseContextHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/utils/BaseContextHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/utils/ConvertUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/utils/ConvertUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/utils/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/utils/entity/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/utils/enums/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/utils/enums/Operation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/utils/exceptions/BaseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/utils/exceptions/BaseException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/utils/exceptions/BusinessException.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/utils/exceptions/BusinessException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/utils/exceptions/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/utils/exceptions/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/utils/exceptions/UserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/utils/exceptions/UserException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/utils/exceptions/ValidationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/utils/exceptions/ValidationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/utils/token/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/utils/token/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/utils/token/TokenBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/utils/token/TokenBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/utils/validate/AddGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/utils/validate/AddGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/utils/validate/DeleteGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/utils/validate/DeleteGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/utils/validate/UpdateGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/utils/validate/UpdateGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/first/utils/validate/ValidatorUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/utils/validate/ValidatorUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lsl/demo/util/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/util/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-pro.yml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/application-pro.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/common/CommentCountMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/common/CommentCountMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/common/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/common/CommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/common/LevelMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/common/LevelMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/common/MovieMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/common/MovieMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/sys/ArtistMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/sys/ArtistMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/sys/DictMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/sys/DictMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/sys/UserInfoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/sys/UserInfoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/sys/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/mapper/sys/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/static/7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/aa.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/static/aa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/static/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/static/7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/static/aa.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/static/aa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/user/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/user/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/templates/user/success.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/lsl/demo/BisheDemo2ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/test/java/com/lsl/demo/BisheDemo2ApplicationTests.java" afterDir="false" />
+    </list>
+    <list id="4701636e-666a-4765-8432-515b639ac494" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Enum" />
+        <option value="package-info" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\for_work\maven\repository" />
+        <option name="userSettingsFile" value="D:\Java\idea_noCommunity\IntelliJ IDEA 2019.3\plugins\maven\lib\maven3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VpVKE519AJLZG0eYi4YqXQnjhb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\admin" />
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\admin\src" />
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\pachong\src\main\java\com\lsl\pachong\entity" />
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\pachong\src\test\java\com" />
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\pachong\src\test\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lsl.pachong.server" />
+      <recent name="com.lsl.pachong.file" />
+      <recent name="com.lsl.pachong.utils.resolver" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\pachong" />
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\src\main\resources\templates\user" />
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\src\main\resources\mapper" />
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\src\main\resources\static" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.CodeGenerator">
+    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lsl.demo.util.CodeGenerator" />
+      <module name="bisheDemo2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lsl.demo.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BisheDemo2ApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bisheDemo2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lsl.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lsl.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.lsl.demo.BisheDemo2ApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BisheDemo2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="bisheDemo2" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lsl.demo.BisheDemo2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CodeGenerator" />
+        <item itemvalue="JUnit.BisheDemo2ApplicationTests.contextLoads" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task id="Default" summary="Default task">
+      <changelist id="4701636e-666a-4765-8432-515b639ac494" name="Default Changelist" comment="" />
+      <created>1577949957314</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582681036722</updated>
+      <workItem from="1577949967998" duration="5000" />
+      <workItem from="1577950713221" duration="5573000" />
+      <workItem from="1578011023777" duration="3109000" />
+      <workItem from="1578018850026" duration="3900000" />
+      <workItem from="1578044111591" duration="577000" />
+      <workItem from="1578121666252" duration="1874000" />
+      <workItem from="1578642080464" duration="9144000" />
+      <workItem from="1578702757089" duration="22703000" />
+      <workItem from="1579009871014" duration="1176000" />
+      <workItem from="1580375190811" duration="24000" />
+      <workItem from="1580375709924" duration="22000" />
+      <workItem from="1580430881520" duration="7571000" />
+      <workItem from="1580440525396" duration="1104000" />
+      <workItem from="1581320646534" duration="6012000" />
+      <workItem from="1581468742280" duration="20281000" />
+      <workItem from="1581554091171" duration="1238000" />
+      <workItem from="1581576926963" duration="784000" />
+      <workItem from="1581577879312" duration="6334000" />
+      <workItem from="1581641647278" duration="13601000" />
+      <workItem from="1581662061823" duration="7276000" />
+      <workItem from="1581728034607" duration="19863000" />
+      <workItem from="1581899192128" duration="18819000" />
+      <workItem from="1581986413234" duration="14057000" />
+      <workItem from="1582072030899" duration="9977000" />
+      <workItem from="1582097581397" duration="36000" />
+      <workItem from="1582098134094" duration="106000" />
+      <workItem from="1582163963905" duration="389000" />
+      <workItem from="1582164587382" duration="2434000" />
+      <workItem from="1582168537483" duration="1714000" />
+      <workItem from="1582255660650" duration="2035000" />
+      <workItem from="1582331356566" duration="1591000" />
+      <workItem from="1582613713752" duration="8922000" />
+      <workItem from="1582623038159" duration="702000" />
+      <workItem from="1582677305193" duration="2044000" />
+      <workItem from="1582679583143" duration="662000" />
+      <workItem from="1582680251136" duration="777000" />
+    </task>
+    <task id="LOCAL-00001" summary="完善了登陆模块">
+      <created>1581577283503</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581577283503</updated>
+    </task>
+    <task id="LOCAL-00002" summary="2-14 ： 完成字典表功能">
+      <created>1581728472451</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1581728472451</updated>
+    </task>
+    <task id="LOCAL-00003" summary="完成评论模块和用户信息模块">
+      <created>1581759466371</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1581759466371</updated>
+    </task>
+    <task id="LOCAL-00004" summary="2-17 后台任务基本完成">
+      <created>1581929324951</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1581929324951</updated>
+    </task>
+    <task id="LOCAL-00005" summary="添加拦截器，完善功能">
+      <created>1582098182868</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1582098182868</updated>
+    </task>
+    <task id="LOCAL-00006" summary="做爬虫之前的最后一次保存">
+      <created>1582614074994</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1582614074994</updated>
+    </task>
+    <task id="LOCAL-00007" summary="2-25工作结束">
+      <created>1582678685639</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1582678685639</updated>
+    </task>
+    <task active="true" id="LOCAL-00008" summary="Default Changelist1">
+      <changelist id="e98f5943-2793-4cf8-aa6c-57b308851a13" name="Default Changelist1" comment="" />
+      <created>1582681036674</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1582681036722</updated>
+      <workItem from="1582681037220" duration="342000" />
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <option name="trackContextForNewChangelist" value="true" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="完善了登陆模块" />
+    <MESSAGE value="2-14 ： 完成字典表功能" />
+    <MESSAGE value="完成评论模块和用户信息模块" />
+    <MESSAGE value="2-17 后台任务基本完成" />
+    <MESSAGE value="添加拦截器，完善功能" />
+    <MESSAGE value="做爬虫之前的最后一次保存" />
+    <MESSAGE value="2-25工作结束" />
+    <option name="LAST_COMMIT_MESSAGE" value="2-25工作结束" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="42" key="#Project_Structure" timestamp="1582680282806">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="42" key="#Project_Structure/0.0.1366.768@0.0.1366.768" timestamp="1582680282806" />
+    <state x="275" y="42" key="#SQL_Dialects" timestamp="1581668427333">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="42" key="#SQL_Dialects/0.0.1366.768@0.0.1366.768" timestamp="1581668427333" />
+    <state x="488" y="100" key="#com.intellij.ide.util.MemberChooser" timestamp="1581908921900">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="488" y="100" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1581908921900" />
+    <state x="413" y="164" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1581496815939">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="413" y="164" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1366.768@0.0.1366.768" timestamp="1581496815939" />
+    <state x="493" y="290" key="#com.intellij.javaee.module.view.web.EditWebRootDialog" timestamp="1580433757900">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="493" y="290" key="#com.intellij.javaee.module.view.web.EditWebRootDialog/0.0.1366.768@0.0.1366.768" timestamp="1580433757900" />
+    <state x="363" y="119" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578646510904">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="363" y="119" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.768@0.0.1366.768" timestamp="1578646510904" />
+    <state x="272" y="309" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1582680492050">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="272" y="309" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.768@0.0.1366.768" timestamp="1582680492050" />
+    <state x="462" y="242" width="441" height="293" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1581496816505">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="462" y="242" width="441" height="293" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.768@0.0.1366.768" timestamp="1581496816505" />
+    <state x="462" y="263" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1582680498338">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="462" y="263" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1366.768@0.0.1366.768" timestamp="1582680498338" />
+    <state x="287" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581476963039">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="287" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.768@0.0.1366.768" timestamp="1581476963039" />
+    <state x="413" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581576966237">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="413" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768@0.0.1366.768" timestamp="1581576966237" />
+    <state x="256" y="0" key="CommitChangelistDialog2" timestamp="1582678672734">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="256" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1582678672734" />
+    <state x="92" y="92" width="1182" height="584" key="DiffContextDialog" timestamp="1582681103264">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="92" y="92" width="1182" height="584" key="DiffContextDialog/0.0.1366.768@0.0.1366.768" timestamp="1582681103264" />
+    <state x="92" y="92" width="1182" height="584" key="DirDiffDialog" timestamp="1582097131963">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="92" y="92" width="1182" height="584" key="DirDiffDialog/0.0.1366.768@0.0.1366.768" timestamp="1582097131963" />
+    <state x="484" y="125" key="FileChooserDialogImpl" timestamp="1581990310100">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="484" y="125" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1581990310100" />
+    <state x="544" y="274" key="Github.ShareDialog" timestamp="1579010338631">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="544" y="274" key="Github.ShareDialog/0.0.1366.768@0.0.1366.768" timestamp="1579010338631" />
+    <state x="419" y="89" key="Github.UntrackedFilesDialog" timestamp="1579010351245">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="419" y="89" key="Github.UntrackedFilesDialog/0.0.1366.768@0.0.1366.768" timestamp="1579010351245" />
+    <state width="1323" height="233" key="GridCell.Tab.0.bottom" timestamp="1582679432593">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="233" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1582679432593" />
+    <state width="1323" height="233" key="GridCell.Tab.0.center" timestamp="1582679432593">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="233" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1582679432593" />
+    <state width="1323" height="233" key="GridCell.Tab.0.left" timestamp="1582679432593">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="233" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1582679432593" />
+    <state width="1323" height="233" key="GridCell.Tab.0.right" timestamp="1582679432593">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="233" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1582679432593" />
+    <state width="1323" height="233" key="GridCell.Tab.1.bottom" timestamp="1582097388985">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="233" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1582097388985" />
+    <state width="1323" height="233" key="GridCell.Tab.1.center" timestamp="1582097388984">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="233" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1582097388984" />
+    <state width="1323" height="233" key="GridCell.Tab.1.left" timestamp="1582097388984">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="233" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1582097388984" />
+    <state width="1323" height="233" key="GridCell.Tab.1.right" timestamp="1582097388985">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="233" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1582097388985" />
+    <state width="1323" height="238" key="GridCell.Tab.2.bottom" timestamp="1581669552199">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="238" key="GridCell.Tab.2.bottom/0.0.1366.768@0.0.1366.768" timestamp="1581669552199" />
+    <state width="1323" height="238" key="GridCell.Tab.2.center" timestamp="1581669552199">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="238" key="GridCell.Tab.2.center/0.0.1366.768@0.0.1366.768" timestamp="1581669552199" />
+    <state width="1323" height="238" key="GridCell.Tab.2.left" timestamp="1581669552199">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="238" key="GridCell.Tab.2.left/0.0.1366.768@0.0.1366.768" timestamp="1581669552199" />
+    <state width="1323" height="238" key="GridCell.Tab.2.right" timestamp="1581669552199">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="238" key="GridCell.Tab.2.right/0.0.1366.768@0.0.1366.768" timestamp="1581669552199" />
+    <state x="409" y="106" key="RollbackChangesDialog" timestamp="1581577727069">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="409" y="106" key="RollbackChangesDialog/0.0.1366.768@0.0.1366.768" timestamp="1581577727069" />
+    <state x="146" y="28" key="SettingsEditor" timestamp="1582677360692">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="146" y="28" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1582677360692" />
+    <state x="529" y="299" key="VCS.ChangelistChooser" timestamp="1582681036682">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="529" y="299" key="VCS.ChangelistChooser/0.0.1366.768@0.0.1366.768" timestamp="1582681036682" />
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1582678705705">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1582678705705" />
+    <state x="92" y="92" width="1182" height="584" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1581577395180">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="92" y="92" width="1182" height="584" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.768@0.0.1366.768" timestamp="1581577395180" />
+    <state x="323" y="297" key="com.intellij.ide.util.TipDialog" timestamp="1582623636974">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="323" y="297" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1582623636974" />
+    <state x="475" y="301" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581929386620">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="475" y="301" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768@0.0.1366.768" timestamp="1581929386620" />
+    <state x="359" y="122" width="786" height="590" key="find.popup" timestamp="1581665069110">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="359" y="122" width="786" height="590" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1581665069110" />
+    <state x="364" y="144" key="ftp.server.browser" timestamp="1581990433606">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="364" y="144" key="ftp.server.browser/0.0.1366.768@0.0.1366.768" timestamp="1581990433606" />
+    <state x="115" y="103" key="new project wizard" timestamp="1582679243936">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="115" y="103" key="new project wizard/0.0.1366.768@0.0.1366.768" timestamp="1582679243936" />
+    <state x="617" y="273" key="publish.login" timestamp="1581990409126">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="617" y="273" key="publish.login/0.0.1366.768@0.0.1366.768" timestamp="1581990409126" />
+    <state x="339" y="172" key="run.anything.popup" timestamp="1581906182379">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1581906182379" />
+    <state x="339" y="37" width="672" height="676" key="search.everywhere.popup" timestamp="1581758798819">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="339" y="37" width="672" height="676" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1581758798819" />
+  </component>
+</project>
