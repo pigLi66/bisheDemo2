@@ -36,7 +36,7 @@ public class ArtistEntity extends BaseEntity {
     /**
      * 出生日期
      */
-    private LocalDate birthday;
+    private String birthday;
 
     /**
      * 出生地

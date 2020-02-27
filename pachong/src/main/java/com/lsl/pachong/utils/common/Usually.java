@@ -1,5 +1,6 @@
 package com.lsl.pachong.utils.common;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 /**
@@ -15,6 +16,10 @@ public class Usually {
         printCutLine();
     }
 
+    public static void print(Object[] os) {
+        print(Arrays.asList(os));
+    }
+
     public static void print(Object o) {
         System.out.println(o.getClass());
         System.out.println(o);
@@ -22,7 +27,7 @@ public class Usually {
     }
 
     public static void printCutLine() {
-        for (int i=0; i < 50; i++) {
+        for (int i=0; i < 100; i++) {
             System.out.print("-");
         }
         System.out.println();

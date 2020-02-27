@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.net.URL;
+import java.net.URLConnection;
 
 /**
  * @author lisiliang
@@ -28,6 +30,20 @@ public class UploadJpg {
     public UploadJpg(String host, int port) {
         this.host = host;
         this.port = port;
+    }
+
+    public String uploadByURL(String urlPath) {
+        try {
+            URL url = new URL(urlPath);
+            URLConnection connection = url.openConnection();
+
+            connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36");
+
+            connection.connect();
+            return upload(connection.getInputStream());
+        } catch (IOException e) {
+            throw new RuntimeException("上传文件出错", e);
+        }
     }
 
     public String upload(InputStream inputStream) {
@@ -52,11 +68,15 @@ public class UploadJpg {
         return fileUrl;
     }
 
-    public String upload(String filePath) throws IOException {
-        InputStream fileIn = new FileInputStream(filePath);
-        String fileUrl = this.upload(fileIn);
-        fileIn.close();
-        return fileUrl;
+    public String upload(String filePath) {
+        try {
+            InputStream fileIn = new FileInputStream(filePath);
+            String fileUrl = this.upload(fileIn);
+            fileIn.close();
+            return fileUrl;
+        } catch (IOException e) {
+            throw new RuntimeException("上传文件出错", e);
+        }
     }
 
 }

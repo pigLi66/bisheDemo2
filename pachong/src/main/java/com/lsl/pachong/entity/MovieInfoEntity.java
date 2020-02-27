@@ -25,4 +25,8 @@ public class MovieInfoEntity {
 
     private Double level;
 
+    private String doubanId;
+
+    private String classId;
+
 }

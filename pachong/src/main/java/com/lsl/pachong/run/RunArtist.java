@@ -15,13 +15,17 @@ import java.io.IOException;
  */
 public class RunArtist {
 
-    public static ArtistEntity run(String urlPath) throws IOException {
-        Document document = Jsoup.connect(urlPath)
-                .userAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36")
-                .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9")
-                .get();
-        ArtistEntity rs =  ArtistResolver.resolve(document);
-        Usually.print(rs);
+    public static ArtistEntity run(String urlPath) {
+        ArtistEntity rs = null;
+        try {
+            Document document = Jsoup.connect(urlPath)
+                    .userAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36")
+                    .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9")
+                    .get();
+            rs = ArtistResolver.resolve(document);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return rs;
     }
 

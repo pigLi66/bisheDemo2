@@ -19,7 +19,7 @@ public class MovieBeanResolver {
 
     public static List<MovieBean> resolve(String json) {
         JSONObject jsonObject = JSONObject.parseObject(json);
-        JSONArray data = jsonObject.getJSONArray("data");
+        JSONArray data = jsonObject.getJSONArray("subjects");
         if (Objects.isNull(data)) {
             throw new ResolverException("json解析异常");
         }
@@ -34,7 +34,6 @@ public class MovieBeanResolver {
             json.append(scanner.nextLine());
             json.append("\n");
         }
-
         return resolve(json.toString());
     }
 

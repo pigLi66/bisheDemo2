@@ -18,17 +18,21 @@ import java.util.Objects;
 @Data
 public class RunMovie {
 
-    public static MovieInfoEntity run(String urlPath) throws IOException {
-        Document document = Jsoup.connect(urlPath)
-                .userAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36")
-                .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9")
-                .get();
-        if (Objects.isNull(document)) {
-            throw new PaChongException("爬虫失误");
+    public static MovieInfoEntity run(String urlPath) {
+        MovieInfoEntity rs = null;
+        try {
+            Document document = Jsoup.connect(urlPath)
+                    .userAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36")
+                    .header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9")
+                    .get();
+            if (Objects.isNull(document)) {
+                throw new PaChongException("爬虫失误");
+            }
+            // 获取电影信息，包括 导演、演员、类型、片长等
+            rs = MovieInfoResolver.resolver(document);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        // 获取电影信息，包括 导演、演员、类型、片长等
-        MovieInfoEntity rs = MovieInfoResolver.resolver(document);
-        Usually.print(rs);
         return rs;
     }
 

@@ -1,132 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e98f5943-2793-4cf8-aa6c-57b308851a13" name="Default Changelist1" comment="完成了模块的划分">
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/application-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/application-pro.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/BisheDemo2Application.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/controller/CommentController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/controller/CommentCountController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/controller/LevelController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/controller/MovieController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/dto/CommentCountDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/dto/CommentDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/dto/LevelDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/dto/MovieDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/entity/CommentCountEntity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/entity/CommentEntity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/entity/LevelEntity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/entity/MovieEntity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/mapper/CommentCountMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/mapper/CommentMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/mapper/LevelMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/mapper/MovieMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/service/ICommentCountService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/service/ICommentService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/service/ILevelService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/service/IMovieService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/service/impl/CommentCountServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/service/impl/CommentServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/service/impl/LevelServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/common/service/impl/MovieServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/config/WebConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/interceptor/AuthenticationInterceptor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/controller/ArtistController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/controller/DictController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/controller/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/controller/UserInfoController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/dto/DictDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/dto/LoginDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/dto/LoginResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/dto/UserDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/dto/UserInfoDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/entity/ArtistEntity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/entity/DictEntity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/entity/UserEntity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/entity/UserInfoEntity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/mapper/ArtistMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/mapper/DictMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/mapper/UserInfoMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/mapper/UserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/service/IArtistService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/service/IDictService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/service/IUserInfoService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/service/IUserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/service/impl/ArtistServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/service/impl/DictServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/service/impl/UserInfoServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/sys/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/utils/BaseContextHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/utils/ConvertUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/utils/entity/BaseEntity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/utils/enums/Operation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/utils/exceptions/BaseException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/utils/exceptions/BusinessException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/utils/exceptions/GlobalExceptionHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/utils/exceptions/UserException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/utils/exceptions/ValidationException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/utils/token/Token.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/utils/token/TokenBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/utils/validate/AddGroup.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/utils/validate/DeleteGroup.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/utils/validate/UpdateGroup.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/first/utils/validate/ValidatorUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/util/CodeGenerator$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/util/CodeGenerator$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/com/lsl/demo/util/CodeGenerator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/mapper/common/CommentCountMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/mapper/common/CommentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/mapper/common/LevelMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/mapper/common/MovieMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/mapper/sys/ArtistMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/mapper/sys/DictMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/mapper/sys/UserInfoMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/mapper/sys/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/static/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/static/aa.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/templates/static/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/templates/static/aa.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/templates/user/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/templates/user/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/classes/templates/user/success.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/target/test-classes/com/lsl/demo/BisheDemo2ApplicationTests.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/PaChongApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/utils/resolver/ArtistResolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/src/test/java/com/lsl/pachong/PaChongApplicationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/PaChongApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/entity/Human.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/entity/MovieBean.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/entity/MovieInfoEntity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/exceptions/PaChongException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/exceptions/ResolverException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/file/SaveAsFile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/run/RunArtist.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/run/RunMovie.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/run/RunSearchSubjects.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/server/UploadJpg.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/utils/common/Usually.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/utils/constant/DoubanConstants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/utils/resolver/ArtistResolver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/utils/resolver/MovieBeanResolver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/classes/com/lsl/pachong/utils/resolver/MovieInfoResolver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pachong/target/test-classes/com/lsl/pachong/PaChongApplicationTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/bisheDemo2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bisheDemo2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="e98f5943-2793-4cf8-aa6c-57b308851a13" name="Default Changelist1" comment="修复模块">
+      <change afterPath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/run/Run.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/server/UploadJpgToMyLinux.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/admin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admin.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/BisheDemo2Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/BisheDemo2Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/entity/MovieEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/common/entity/MovieEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/entity/ArtistEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/first/sys/entity/ArtistEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/test/java/com/lsl/demo/BisheDemo2ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/test/java/com/lsl/demo/BisheDemo2ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/PaChong.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/util/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/com/lsl/demo/util/CodeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/PaChongApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/PaChongApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/entity/MovieBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/entity/MovieBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/entity/MovieInfoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/entity/MovieInfoEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/run/RunArtist.java" beforeDir="false" afterPath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/run/RunArtist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/run/RunMovie.java" beforeDir="false" afterPath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/run/RunMovie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/run/RunSearchSubjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/run/RunSearchSubjects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/server/UploadJpg.java" beforeDir="false" afterPath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/server/UploadJpg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/utils/common/Usually.java" beforeDir="false" afterPath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/utils/common/Usually.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/utils/resolver/ArtistResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/utils/resolver/ArtistResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/utils/resolver/MovieBeanResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/utils/resolver/MovieBeanResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pachong/src/test/java/com/lsl/PaChongTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/utils/resolver/MovieInfoResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/pachong/src/main/java/com/lsl/pachong/utils/resolver/MovieInfoResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pachong/src/test/java/com/lsl/pachong/PaChongApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/pachong/src/test/java/com/lsl/pachong/PaChongApplicationTest.java" afterDir="false" />
     </list>
     <list id="4701636e-666a-4765-8432-515b639ac494" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -155,6 +49,7 @@
         <option value="Enum" />
         <option value="package-info" />
         <option value="Interface" />
+        <option value="Kotlin Class" />
         <option value="Class" />
       </list>
     </option>
@@ -205,34 +100,34 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pachong/src/main" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\pachong" />
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\src\main\resources\templates\user" />
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\src\main\resources\mapper" />
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\src\main\resources\static" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.lsl.pachong" />
       <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\admin" />
-      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\admin\src" />
-      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\pachong\src\main\java\com\lsl\pachong\entity" />
-      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\pachong\src\test\java\com" />
-      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\pachong\src\test\java" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.lsl.pachong.server" />
       <recent name="com.lsl.pachong.file" />
       <recent name="com.lsl.pachong.utils.resolver" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\pachong" />
-      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\src\main\resources\templates\user" />
-      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\src\main\resources\mapper" />
-      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\src\main\resources\static" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\pachong\src\main" />
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\admin" />
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\admin\src" />
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\pachong\src\main\java\com\lsl\pachong\entity" />
+      <recent name="F:\实习_2019\stu\spring_stu_Internet\bisheDemo2\pachong\src\test\java\com" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -245,20 +140,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PaChongApplicationTest.test">
-    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lsl.demo.util.CodeGenerator" />
-      <module name="bisheDemo2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.lsl.demo.util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.PaChongApplicationTest.testPaChong">
     <configuration name="BisheDemo2ApplicationTests.testService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="admin" />
       <extension name="coverage">
@@ -306,6 +188,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PaChongApplicationTest.testPaChong" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pachong" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lsl.pachong.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lsl.pachong" />
+      <option name="MAIN_CLASS_NAME" value="com.lsl.pachong.PaChongApplicationTest" />
+      <option name="METHOD_NAME" value="testPaChong" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BisheDemo2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="admin" />
       <extension name="coverage">
@@ -328,11 +226,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PaChongApplicationTest.testPaChong" />
         <item itemvalue="JUnit.PaChongApplicationTest.test" />
         <item itemvalue="Spring Boot.BisheDemo2Application" />
         <item itemvalue="JUnit.PaChongApplicationTest" />
         <item itemvalue="JUnit.BisheDemo2ApplicationTests.testService" />
-        <item itemvalue="Application.CodeGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -340,6 +238,7 @@
     <option name="viewStates">
       <list>
         <serviceView>
+          <option name="contentProportion" value="0.16692427" />
           <treeState>
             <expand>
               <path>
@@ -349,6 +248,11 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="JUnit" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Failed" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="JUnit" type="7427dc5b:ServiceModel$ServiceGroupNode" />
                 <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
               <path>
@@ -363,11 +267,6 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Spring Boot" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
@@ -487,7 +386,8 @@
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
       <updated>1582681036722</updated>
-      <workItem from="1582681037220" duration="13202000" />
+      <workItem from="1582681037220" duration="24098000" />
+      <workItem from="1582763681541" duration="12841000" />
     </task>
     <task id="LOCAL-00009" summary="完成了模块的划分">
       <created>1582681530081</created>
@@ -496,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582681530081</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="修复模块">
+      <created>1582701393267</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1582701393267</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <option name="trackContextForNewChangelist" value="true" />
     <servers />
   </component>
@@ -508,7 +415,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -524,7 +433,8 @@
     <MESSAGE value="做爬虫之前的最后一次保存" />
     <MESSAGE value="2-25工作结束" />
     <MESSAGE value="完成了模块的划分" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了模块的划分" />
+    <MESSAGE value="修复模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="修复模块" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -536,6 +446,14 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="275" y="42" key="#SQL_Dialects/0.0.1366.768@0.0.1366.768" timestamp="1581668427333" />
+    <state x="413" y="139" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1582702126877">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="413" y="139" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1582702126877" />
+    <state x="137" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582770279672">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="137" y="39" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1582770279672" />
     <state x="488" y="100" key="#com.intellij.ide.util.MemberChooser" timestamp="1581908921900">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -572,10 +490,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="413" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768@0.0.1366.768" timestamp="1581576966237" />
-    <state x="57" y="0" key="CommitChangelistDialog2" timestamp="1582701319881">
+    <state x="57" y="0" key="CommitChangelistDialog2" timestamp="1582701385752">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="57" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1582701319881" />
+    <state x="57" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1582701385752" />
     <state x="92" y="92" width="1182" height="584" key="DiffContextDialog" timestamp="1582681103264">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -596,86 +514,86 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="419" y="89" key="Github.UntrackedFilesDialog/0.0.1366.768@0.0.1366.768" timestamp="1579010351245" />
-    <state width="905" height="373" key="GridCell.Tab.0.bottom" timestamp="1582701335035">
+    <state width="1077" height="373" key="GridCell.Tab.0.bottom" timestamp="1582783975274">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="905" height="373" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1582701335035" />
-    <state width="905" height="373" key="GridCell.Tab.0.center" timestamp="1582701335035">
+    <state width="1077" height="373" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1582783975274" />
+    <state width="1077" height="373" key="GridCell.Tab.0.center" timestamp="1582783975274">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="905" height="373" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1582701335035" />
-    <state width="905" height="373" key="GridCell.Tab.0.left" timestamp="1582701335035">
+    <state width="1077" height="373" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1582783975274" />
+    <state width="1077" height="373" key="GridCell.Tab.0.left" timestamp="1582783975274">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="905" height="373" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1582701335035" />
-    <state width="905" height="373" key="GridCell.Tab.0.right" timestamp="1582701335035">
+    <state width="1077" height="373" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1582783975274" />
+    <state width="1077" height="373" key="GridCell.Tab.0.right" timestamp="1582783975274">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="905" height="373" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1582701335035" />
-    <state width="905" height="373" key="GridCell.Tab.1.bottom" timestamp="1582700041107">
+    <state width="1077" height="373" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1582783975274" />
+    <state width="1077" height="373" key="GridCell.Tab.1.bottom" timestamp="1582782502169">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="905" height="373" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1582700041107" />
-    <state width="905" height="373" key="GridCell.Tab.1.center" timestamp="1582700041106">
+    <state width="1077" height="373" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1582782502169" />
+    <state width="1077" height="373" key="GridCell.Tab.1.center" timestamp="1582782502169">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="905" height="373" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1582700041106" />
-    <state width="905" height="373" key="GridCell.Tab.1.left" timestamp="1582700041106">
+    <state width="1077" height="373" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1582782502169" />
+    <state width="1077" height="373" key="GridCell.Tab.1.left" timestamp="1582782502169">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="905" height="373" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1582700041106" />
-    <state width="905" height="373" key="GridCell.Tab.1.right" timestamp="1582700041106">
+    <state width="1077" height="373" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1582782502169" />
+    <state width="1077" height="373" key="GridCell.Tab.1.right" timestamp="1582782502169">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="905" height="373" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1582700041106" />
-    <state width="905" height="373" key="GridCell.Tab.2.bottom" timestamp="1582700041107">
+    <state width="1077" height="373" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1582782502169" />
+    <state width="905" height="373" key="GridCell.Tab.2.bottom" timestamp="1582712222036">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="905" height="373" key="GridCell.Tab.2.bottom/0.0.1366.768@0.0.1366.768" timestamp="1582700041107" />
-    <state width="905" height="373" key="GridCell.Tab.2.center" timestamp="1582700041107">
+    <state width="905" height="373" key="GridCell.Tab.2.bottom/0.0.1366.768@0.0.1366.768" timestamp="1582712222036" />
+    <state width="905" height="373" key="GridCell.Tab.2.center" timestamp="1582712222036">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="905" height="373" key="GridCell.Tab.2.center/0.0.1366.768@0.0.1366.768" timestamp="1582700041107" />
-    <state width="905" height="373" key="GridCell.Tab.2.left" timestamp="1582700041107">
+    <state width="905" height="373" key="GridCell.Tab.2.center/0.0.1366.768@0.0.1366.768" timestamp="1582712222036" />
+    <state width="905" height="373" key="GridCell.Tab.2.left" timestamp="1582712222036">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="905" height="373" key="GridCell.Tab.2.left/0.0.1366.768@0.0.1366.768" timestamp="1582700041107" />
-    <state width="905" height="373" key="GridCell.Tab.2.right" timestamp="1582700041107">
+    <state width="905" height="373" key="GridCell.Tab.2.left/0.0.1366.768@0.0.1366.768" timestamp="1582712222036" />
+    <state width="905" height="373" key="GridCell.Tab.2.right" timestamp="1582712222036">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="905" height="373" key="GridCell.Tab.2.right/0.0.1366.768@0.0.1366.768" timestamp="1582700041107" />
+    <state width="905" height="373" key="GridCell.Tab.2.right/0.0.1366.768@0.0.1366.768" timestamp="1582712222036" />
     <state x="409" y="106" key="RollbackChangesDialog" timestamp="1581577727069">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="409" y="106" key="RollbackChangesDialog/0.0.1366.768@0.0.1366.768" timestamp="1581577727069" />
-    <state x="146" y="0" key="SettingsEditor" timestamp="1582700166090">
+    <state x="146" y="0" key="SettingsEditor" timestamp="1582711699722">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="146" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1582700166090" />
+    <state x="146" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1582711699722" />
     <state x="529" y="299" key="VCS.ChangelistChooser" timestamp="1582681036682">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="529" y="299" key="VCS.ChangelistChooser/0.0.1366.768@0.0.1366.768" timestamp="1582681036682" />
-    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1582681533262">
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1582701448329">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1582681533262" />
-    <state x="92" y="92" width="1182" height="584" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1581577395180">
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1582701448329" />
+    <state x="92" y="92" width="1182" height="584" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1582704212284">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="92" y="92" width="1182" height="584" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.768@0.0.1366.768" timestamp="1581577395180" />
-    <state x="323" y="297" key="com.intellij.ide.util.TipDialog" timestamp="1582623636974">
+    <state x="92" y="92" width="1182" height="584" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.768@0.0.1366.768" timestamp="1582704212284" />
+    <state x="323" y="297" key="com.intellij.ide.util.TipDialog" timestamp="1582764099803">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="323" y="297" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1582623636974" />
+    <state x="323" y="297" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1582764099803" />
     <state x="475" y="301" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581929386620">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="475" y="301" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.768@0.0.1366.768" timestamp="1581929386620" />
-    <state x="359" y="122" width="786" height="590" key="find.popup" timestamp="1581665069110">
+    <state x="359" y="122" width="786" height="590" key="find.popup" timestamp="1582773054942">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="359" y="122" width="786" height="590" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1581665069110" />
+    <state x="359" y="122" width="786" height="590" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1582773054942" />
     <state x="364" y="144" key="ftp.server.browser" timestamp="1581990433606">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -688,10 +606,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="617" y="273" key="publish.login/0.0.1366.768@0.0.1366.768" timestamp="1581990409126" />
-    <state x="339" y="172" key="run.anything.popup" timestamp="1581906182379">
+    <state x="339" y="172" key="run.anything.popup" timestamp="1582771271787">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1581906182379" />
+    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1582771271787" />
     <state x="339" y="37" width="672" height="676" key="search.everywhere.popup" timestamp="1581758798819">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

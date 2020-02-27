@@ -1,5 +1,6 @@
 package com.lsl.demo.first.common.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.lsl.demo.first.utils.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,6 +19,7 @@ import java.time.LocalDate;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
+@TableName("movie")
 public class MovieEntity extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
@@ -45,7 +47,7 @@ public class MovieEntity extends BaseEntity {
     /**
      * 电影时长
      */
-    private Integer span;
+    private String span;
 
     /**
      * 电影简介
@@ -60,7 +62,7 @@ public class MovieEntity extends BaseEntity {
     /**
      * 上映时间
      */
-    private LocalDate releaseTime;
+    private String releaseTime;
 
     /**
      * 豆瓣上面的id
