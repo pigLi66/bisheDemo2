@@ -1,5 +1,6 @@
 package com.lsl.demo.first.common.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.lsl.demo.first.common.dto.MovieDto;
 import com.lsl.demo.first.common.entity.MovieEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -42,5 +43,13 @@ public interface IMovieService extends IService<MovieEntity> {
      * @return
      */
     List<MovieEntity> getAllMovieList();
+
+    /**
+     * 获取一页的数据
+     * @param startPage 显示的页数
+     * @param pageLimit 一页的数据量
+     * @return
+     */
+    IPage<MovieEntity> getPage(int startPage, int pageLimit);
 
 }

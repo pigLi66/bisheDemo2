@@ -1,16 +1,11 @@
 package com.lsl.pachong;
 
-import com.lsl.pachong.entity.MovieBean;
-import com.lsl.pachong.entity.MovieInfoEntity;
+
 import com.lsl.pachong.run.Run;
-import com.lsl.pachong.run.RunArtist;
-import com.lsl.pachong.run.RunMovie;
-import com.lsl.pachong.run.RunSearchSubjects;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
 
 /**
  * @author lisiliang
@@ -31,8 +26,8 @@ public class PaChongApplicationTest {
 
     @Test
     void testPaChong() {
-        run.setSize(20);
-        run.run();
+        run.setSize(40);
+        run.run(0);
     }
 
 }

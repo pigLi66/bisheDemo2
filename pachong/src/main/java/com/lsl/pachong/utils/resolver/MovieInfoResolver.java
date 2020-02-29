@@ -8,6 +8,7 @@ import com.lsl.pachong.utils.constant.DoubanConstants;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -152,7 +153,16 @@ public class MovieInfoResolver {
             try {
                 Element element = document.getElementById("link-report");
                 Elements elements = element.getElementsByClass("all hidden");
-                rs = elements.stream().map(Element::text).collect(Collectors.joining(","));
+                if (CollectionUtils.isEmpty(elements)) {
+                    Elements es = element.getElementsByTag("span");
+                    if (es.size() > 0) {
+                        rs = es.get(0).text();
+                    } else {
+                        rs = null;
+                    }
+                } else {
+                    rs = elements.stream().map(Element::text).collect(Collectors.joining(","));
+                }
             } catch (Exception e) {
                 throw new RuntimeException("parse profile exception", e);
             }

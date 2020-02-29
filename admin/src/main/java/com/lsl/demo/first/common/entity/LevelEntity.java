@@ -1,5 +1,6 @@
 package com.lsl.demo.first.common.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.lsl.demo.first.utils.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,6 +17,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
+@TableName("level")
 public class LevelEntity extends BaseEntity {
 
     private static final long serialVersionUID = 1L;

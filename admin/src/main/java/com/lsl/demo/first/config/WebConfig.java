@@ -20,6 +20,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authenticationInterceptor).excludePathPatterns("/swagger-ui.html",
-                "/swagger-resources/**", "/v2/api-docs", "/webjars/springfox-swagger-ui/**");
+                "/swagger-resources/**", "/v2/api-docs", "/webjars/springfox-swagger-ui/**",
+                "/sys/user/login", "/sys/user/register", "/common/**");
     }
 }

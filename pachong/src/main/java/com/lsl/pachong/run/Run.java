@@ -2,8 +2,10 @@ package com.lsl.pachong.run;
 
 import cn.hutool.core.lang.Assert;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.lsl.demo.first.common.entity.LevelEntity;
 import com.lsl.demo.first.common.entity.MovieEntity;
 import com.lsl.demo.first.common.mapper.MovieMapper;
+import com.lsl.demo.first.common.service.ILevelService;
 import com.lsl.demo.first.common.service.IMovieService;
 import com.lsl.demo.first.common.service.impl.MovieServiceImpl;
 import com.lsl.demo.first.sys.entity.ArtistEntity;
@@ -13,6 +15,7 @@ import com.lsl.demo.first.sys.service.impl.ArtistServiceImpl;
 import com.lsl.pachong.entity.Human;
 import com.lsl.pachong.entity.MovieBean;
 import com.lsl.pachong.entity.MovieInfoEntity;
+import com.lsl.pachong.exceptions.PaChongException;
 import com.lsl.pachong.server.UploadJpg;
 import com.lsl.pachong.server.UploadJpgToMyLinux;
 import com.lsl.pachong.utils.common.Usually;
@@ -22,6 +25,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
+import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -41,6 +45,9 @@ public class Run {
 
     @Autowired
     private ApplicationContext applicationContext;
+
+    @Autowired
+    private ILevelService levelService;
 
     public Run() {
     }
@@ -72,18 +79,36 @@ public class Run {
 
     }
 
-    public void run(int startPage) throws InterruptedException {
+    public void run(String filePath) {
+        try (FileInputStream fileInputStream = new FileInputStream(filePath)) {
+            Scanner fileIn = new Scanner(fileInputStream);
+            int startPage = fileIn.nextInt();
+            run(startPage);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void run(int startPage) {
 
         // test();
-
         int endPage = startPage + size;
         RunSearchSubjects runSearchSubjects = new RunSearchSubjects();
         while (startPage < endPage) {
+            try (FileWriter fileOut = new FileWriter("F:\\实习_2019\\stu\\spring_stu_Internet\\bisheDemo2\\pageNow.txt")) {
+                fileOut.write(startPage + "  ");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             List<MovieBean> movieBeans = runSearchSubjects.getTwenty(startPage);
             for (MovieBean item : movieBeans) {
                 if (Objects.isNull(getMovieFromDB(item.getUrl()))) {
                     MovieEntity movieEntity = new MovieEntity();
                     MovieInfoEntity movieInfoEntity = RunMovie.run(item.getUrl());
+                    if (movieInfoEntity == null) {
+                        System.out.println(item.getUrl());
+                        throw new PaChongException("爬取数据失败");
+                    }
                     movieEntity.setDirectorIds(String.join(",", saveArtists(movieInfoEntity.getDirectors())));
                     movieEntity.setPerformerIds(String.join(",", saveArtists(movieInfoEntity.getPerformers())));
                     movieEntity.setClassIds(movieInfoEntity.getClassId());
@@ -94,9 +119,21 @@ public class Run {
                     movieEntity.setMovieName(item.getTitle());
                     movieEntity.setDoubanId(item.getId());
                     this.movieService.getBaseMapper().insert(movieEntity);
+                    LevelEntity levelEntity = new LevelEntity();
+                    levelEntity.setMovieId(movieEntity.getId());
+                    levelEntity.setUserId("admin");
+                    double level = movieInfoEntity.getLevel();
+                    levelEntity.setLevel((int) level * 2);
+                    levelService.save(levelEntity);
+                    System.out.println(movieInfoEntity);
                 }
             }
-            Thread.sleep(10000);
+            try {
+                Thread.sleep(100000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                System.exit(-5);
+            }
             startPage += 20;
         }
     }
@@ -142,7 +179,7 @@ public class Run {
 
     private String getArtistFromDB(String urlPath) {
         String[] t = urlPath.split("/");
-        String doubanId = t[t.length -1];
+        String doubanId = t[t.length - 1];
         QueryWrapper<ArtistEntity> queryWrapper = new QueryWrapper();
         queryWrapper.eq("douban_id", doubanId);
         ArtistEntity artistEntity = artistService.getBaseMapper().selectOne(queryWrapper);

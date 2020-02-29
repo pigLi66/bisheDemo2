@@ -1,6 +1,9 @@
 package com.lsl.demo.first.common.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.Query;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lsl.demo.first.common.dto.MovieDto;
 import com.lsl.demo.first.common.entity.MovieEntity;
 import com.lsl.demo.first.common.mapper.MovieMapper;
@@ -24,7 +27,9 @@ public class MovieServiceImpl extends ServiceImpl<MovieMapper, MovieEntity> impl
 
     @Override
     public List<MovieEntity> searchByName(String movieName) {
-        return null;
+        QueryWrapper<MovieEntity> queryWrapper = new QueryWrapper<>();
+        queryWrapper.like("movie_name", movieName);
+        return this.baseMapper.selectList(queryWrapper);
     }
 
     @Override
@@ -37,6 +42,13 @@ public class MovieServiceImpl extends ServiceImpl<MovieMapper, MovieEntity> impl
     @Override
     public List<MovieEntity> getAllMovieList() {
         return this.baseMapper.selectList(new QueryWrapper<>());
+    }
+
+    @Override
+    public IPage<MovieEntity> getPage(int startPage, int pageLimit) {
+        Page<MovieEntity> rs = new Page<>(startPage, pageLimit);
+        this.baseMapper.selectPage(rs, new QueryWrapper<>());
+        return rs;
     }
 
     @Override

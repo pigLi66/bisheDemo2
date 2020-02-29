@@ -1,6 +1,7 @@
 package com.lsl.demo.first.common.controller;
 
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.lsl.demo.first.common.dto.MovieDto;
 import com.lsl.demo.first.common.entity.MovieEntity;
 import com.lsl.demo.first.common.service.IMovieService;
@@ -39,22 +40,10 @@ public class MovieController {
         return ResponseEntity.ok(this.movieService.save(dto));
     }
 
-    @ApiOperation("根据电影名字搜索相关电影")
-    @GetMapping("/search/{movieName}")
-    public ResponseEntity<List<MovieEntity>> serachMovieByname(@PathVariable String movieName) {
-        return ResponseEntity.ok(this.movieService.searchByName(movieName));
-    }
-
-    @ApiOperation("根据电影类别获取电影列表")
-    @GetMapping("/class/{classId}")
-    public ResponseEntity<List<MovieEntity>> getByClass(@PathVariable String classId) {
-        return ResponseEntity.ok(this.movieService.getByClassList(classId));
-    }
-
-    @ApiOperation("获取所有的电影")
-    @GetMapping
-    public ResponseEntity<List<MovieEntity>> getAll() {
-        return ResponseEntity.ok(this.movieService.getAllMovieList());
+    @ApiOperation("根据id获取电影的信息")
+    @GetMapping("/{id}")
+    public ResponseEntity<MovieEntity> getById(@PathVariable String id) {
+        return ResponseEntity.ok(movieService.getById(id));
     }
 
     @ApiOperation("根据电影id更新电影数据")
@@ -65,6 +54,30 @@ public class MovieController {
         entity.setId(id);
         this.movieService.updateById(entity);
         return (ResponseEntity) ResponseEntity.ok();
+    }
+
+    @ApiOperation("根据电影名字搜索相关电影")
+    @GetMapping("/include/{movieName}")
+    public ResponseEntity<List<MovieEntity>> serachMovieByname(@PathVariable String movieName) {
+        return ResponseEntity.ok(this.movieService.searchByName(movieName));
+    }
+
+    @ApiOperation("根据电影类别获取电影列表")
+    @GetMapping("/class/{classId}")
+    public ResponseEntity<List<MovieEntity>> getByClass(@PathVariable String classId) {
+        return ResponseEntity.ok(this.movieService.getByClassList(classId));
+    }
+
+    @ApiOperation("获取指定页数的电影列表")
+    @GetMapping("/page")
+    public ResponseEntity<IPage<MovieEntity>> getpage(Integer startPage, Integer pageLimit) {
+        return ResponseEntity.ok(movieService.getPage(startPage, pageLimit));
+    }
+
+    @ApiOperation("获取所有的电影")
+    @GetMapping
+    public ResponseEntity<List<MovieEntity>> getAll() {
+        return ResponseEntity.ok(this.movieService.getAllMovieList());
     }
 
 }

@@ -51,4 +51,9 @@ public class MovieDto {
     @ApiModelProperty("电影简介")
     private String profile;
 
+    /**
+     * 上映时间
+     */
+    private String releaseTime;
+
 }

@@ -49,7 +49,7 @@ public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
 
         // token 已经失效
         if (new Date().compareTo(token.getTimeOut()) > 0) {
-            return resp(response, HttpStatus.getStatusText(HttpStatus.SC_OK), HttpStatus.SC_OK);
+            return resp(response, "token 已经失效", HttpStatus.SC_UNAUTHORIZED);
         } else {
             token.refresh();
             BaseContextHandler.setUserId(token.getUserId());
@@ -67,19 +67,17 @@ public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
     }
 
     private boolean resp(HttpServletResponse response, String msg, int code) throws Exception{
-        return true;
-/*        response.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
         response.setContentType("application/json; charset=utf-8");
-        response.setStatus(HttpStatus.SC_OK);
+        response.setStatus(code);
         Map<String, Object> map = MapUtil.newHashMap();
-        map.put("code", code);
         map.put("message", msg);
-        map.put("timestamp", new Date().getTime());
+        map.put("timestamp", System.currentTimeMillis());
         PrintWriter writer = response.getWriter();
         JSONObject object = JSONUtil.parseFromMap(map);
         writer.write(object.toString());
         writer.close();
-        return false;*/
+        return false;
     }
 
 }
