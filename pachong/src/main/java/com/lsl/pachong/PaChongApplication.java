@@ -11,10 +11,11 @@ import com.lsl.demo.BisheDemo2Application;
  * @author lisiliang
  * @since 2020/2/25
  */
-@SpringBootApplication()
+
+@SpringBootApplication
 @ComponentScan(basePackages = {"com.lsl.demo", "com.lsl.pachong"})
 public class PaChongApplication {
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         SpringApplication.run(PaChongApplication.class, args);
     }
 }

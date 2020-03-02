@@ -2,6 +2,8 @@ package com.lsl.demo.first.common.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.lsl.demo.first.common.dto.MovieDto;
+import com.lsl.demo.first.common.dto.MovieAbstractDto;
+import com.lsl.demo.first.common.dto.MovieInfoDto;
 import com.lsl.demo.first.common.entity.MovieEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -50,6 +52,13 @@ public interface IMovieService extends IService<MovieEntity> {
      * @param pageLimit 一页的数据量
      * @return
      */
-    IPage<MovieEntity> getPage(int startPage, int pageLimit);
+    IPage<MovieAbstractDto> getPage(int startPage, int pageLimit);
+
+    /**
+     * 通过id获取电影信息
+     * @param id
+     * @return
+     */
+    MovieInfoDto getMovieInfoById(String id);
 
 }

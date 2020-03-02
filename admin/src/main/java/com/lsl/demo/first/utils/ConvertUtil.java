@@ -15,6 +15,18 @@ import java.util.stream.Collectors;
  */
 public class ConvertUtil {
 
+    public static<T> List<T> sourceToTarget(Collection<?> sourceList, Class<T> targetClass) {
+        List<T> targetList;
+
+        if (CollectionUtil.isEmpty(sourceList)) {
+            targetList = new ArrayList<>();
+        } else {
+            targetList = sourceList.stream().map(item->sourceToTarget(item, targetClass)).collect(Collectors.toList());
+        }
+
+        return targetList;
+    }
+
     public static<T> T sourceToTarget(Object source, Class<T> target) {
         T targetObj = null;
 
@@ -28,18 +40,6 @@ public class ConvertUtil {
         }
 
         return targetObj;
-    }
-
-    public static<T> List<T> sourceToTarget(Collection<T> sourceList, Class<T> targetClass) {
-        List<T> targetList;
-
-        if (CollectionUtil.isEmpty(sourceList)) {
-            targetList = new ArrayList<>();
-        } else {
-            targetList = sourceList.stream().map(item->sourceToTarget(item, targetClass)).collect(Collectors.toList());
-        }
-
-        return targetList;
     }
 
 }

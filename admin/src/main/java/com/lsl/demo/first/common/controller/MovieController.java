@@ -3,6 +3,8 @@ package com.lsl.demo.first.common.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.lsl.demo.first.common.dto.MovieDto;
+import com.lsl.demo.first.common.dto.MovieAbstractDto;
+import com.lsl.demo.first.common.dto.MovieInfoDto;
 import com.lsl.demo.first.common.entity.MovieEntity;
 import com.lsl.demo.first.common.service.IMovieService;
 import com.lsl.demo.first.utils.ConvertUtil;
@@ -42,8 +44,8 @@ public class MovieController {
 
     @ApiOperation("根据id获取电影的信息")
     @GetMapping("/{id}")
-    public ResponseEntity<MovieEntity> getById(@PathVariable String id) {
-        return ResponseEntity.ok(movieService.getById(id));
+    public ResponseEntity<MovieInfoDto> getById(@PathVariable String id) {
+        return ResponseEntity.ok(movieService.getMovieInfoById(id));
     }
 
     @ApiOperation("根据电影id更新电影数据")
@@ -70,7 +72,7 @@ public class MovieController {
 
     @ApiOperation("获取指定页数的电影列表")
     @GetMapping("/page")
-    public ResponseEntity<IPage<MovieEntity>> getpage(Integer startPage, Integer pageLimit) {
+    public ResponseEntity<IPage<MovieAbstractDto>> getpage(Integer startPage, Integer pageLimit) {
         return ResponseEntity.ok(movieService.getPage(startPage, pageLimit));
     }
 

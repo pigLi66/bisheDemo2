@@ -41,13 +41,13 @@ public class LevelController {
 
     @ApiOperation("根据电影id 获取电影评级")
     @GetMapping("{movieId}")
-    public ResponseEntity<String> getMovieLevel(@PathVariable String movieId) {
+    public ResponseEntity<Double> getMovieLevel(@PathVariable String movieId) {
         return ResponseEntity.ok(this.levelService.getMovieLevel(movieId));
     }
 
     @ApiOperation("获取单个用户对电影评级")
     @GetMapping
-    public ResponseEntity<Integer> getLevel(String movieId, String userId) {
+    public ResponseEntity<Double> getLevel(String movieId, String userId) {
         if (Objects.isNull(movieId) || Objects.isNull(userId)) {
             throw new BusinessException(Operation.FAIL.get());
         }
@@ -56,7 +56,7 @@ public class LevelController {
 
     @ApiOperation("获取当前用户对电影的评级")
     @GetMapping("/movieId")
-    public ResponseEntity<Integer> getLevel(@PathVariable String movieId) {
+    public ResponseEntity<Double> getLevel(@PathVariable String movieId) {
         return ResponseEntity.ok(this.levelService.getLevel(movieId, BaseContextHandler.getUserId()));
     }
 

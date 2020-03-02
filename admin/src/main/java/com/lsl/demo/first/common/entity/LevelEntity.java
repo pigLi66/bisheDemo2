@@ -35,7 +35,7 @@ public class LevelEntity extends BaseEntity {
     /**
      * 评级（1--10）
      */
-    private Integer level;
+    private Double level;
 
 
 }

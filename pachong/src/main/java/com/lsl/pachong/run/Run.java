@@ -95,11 +95,6 @@ public class Run {
         int endPage = startPage + size;
         RunSearchSubjects runSearchSubjects = new RunSearchSubjects();
         while (startPage < endPage) {
-            try (FileWriter fileOut = new FileWriter("F:\\实习_2019\\stu\\spring_stu_Internet\\bisheDemo2\\pageNow.txt")) {
-                fileOut.write(startPage + "  ");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
             List<MovieBean> movieBeans = runSearchSubjects.getTwenty(startPage);
             for (MovieBean item : movieBeans) {
                 if (Objects.isNull(getMovieFromDB(item.getUrl()))) {
@@ -122,10 +117,9 @@ public class Run {
                     LevelEntity levelEntity = new LevelEntity();
                     levelEntity.setMovieId(movieEntity.getId());
                     levelEntity.setUserId("admin");
-                    double level = movieInfoEntity.getLevel();
-                    levelEntity.setLevel((int) level * 2);
+                    levelEntity.setLevel(movieInfoEntity.getLevel());
                     levelService.save(levelEntity);
-                    System.out.println(movieInfoEntity);
+                    Usually.print(movieInfoEntity);
                 }
             }
             try {
@@ -135,7 +129,13 @@ public class Run {
                 System.exit(-5);
             }
             startPage += 20;
+            try (FileWriter fileOut = new FileWriter("F:\\实习_2019\\stu\\spring_stu_Internet\\bisheDemo2\\pageNow.txt")) {
+                fileOut.write(startPage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+        Usually.print("一次爬取结束");
     }
 
     private List<String> saveArtists(List<Human> humans) {

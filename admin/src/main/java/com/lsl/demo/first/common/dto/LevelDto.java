@@ -39,6 +39,6 @@ public class LevelDto {
     @Min(1)
     @NotNull
     @ApiModelProperty("电影评级 1 - 10")
-    private Integer level;
+    private Double level;
 
 }

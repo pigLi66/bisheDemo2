@@ -28,14 +28,14 @@ public interface ILevelService extends IService<LevelEntity> {
      * @param movieId
      * @return
      */
-    String getMovieLevel(String movieId);
+    Double getMovieLevel(String movieId);
 
     /**
      * 获取一个电影的所有评级
      * @param movieId
      * @return
      */
-    List<Integer> getLevelList(String movieId);
+    List<Double> getLevelList(String movieId);
 
     /**
      * 获取单个人员的评级
@@ -43,6 +43,6 @@ public interface ILevelService extends IService<LevelEntity> {
      * @param userId
      * @return
      */
-    Integer getLevel(String movieId, String userId);
+    Double getLevel(String movieId, String userId);
 
 }

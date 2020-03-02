@@ -44,21 +44,21 @@ public class LevelServiceImpl extends ServiceImpl<LevelMapper, LevelEntity> impl
     }
 
     @Override
-    public String getMovieLevel(String movieId) {
-        List<Integer> levels = this.getLevelList(movieId);
-        double rs = levels.stream().mapToInt(a->a).summaryStatistics().getAverage();
-        return String.format("%.2f", rs);
+    public Double getMovieLevel(String movieId) {
+        List<Double> levels = this.getLevelList(movieId);
+        double rs = levels.stream().mapToDouble(a->a).summaryStatistics().getAverage();
+        return Double.parseDouble(String.format("%.2f", rs));
     }
 
     @Override
-    public List<Integer> getLevelList(String movieId) {
+    public List<Double> getLevelList(String movieId) {
         QueryWrapper<LevelEntity> wrapper = new QueryWrapper<>();
         wrapper.eq("movie_id", movieId);
         return this.baseMapper.selectList(wrapper).stream().map(LevelEntity::getLevel).collect(Collectors.toList());
     }
 
     @Override
-    public Integer getLevel(String movieId, String userId) {
+    public Double getLevel(String movieId, String userId) {
         QueryWrapper<LevelEntity> wrapper = new QueryWrapper<>();
         wrapper.eq("movie_id", movieId);
         wrapper.eq("user_id", userId);
