@@ -101,7 +101,7 @@ public class Run {
                     MovieEntity movieEntity = new MovieEntity();
                     MovieInfoEntity movieInfoEntity = RunMovie.run(item.getUrl());
                     if (movieInfoEntity == null) {
-                        System.out.println(item.getUrl());
+                        Usually.print(item.getUrl());
                         throw new PaChongException("爬取数据失败");
                     }
                     movieEntity.setDirectorIds(String.join(",", saveArtists(movieInfoEntity.getDirectors())));
@@ -130,7 +130,7 @@ public class Run {
             }
             startPage += 20;
             try (FileWriter fileOut = new FileWriter("F:\\实习_2019\\stu\\spring_stu_Internet\\bisheDemo2\\pageNow.txt")) {
-                fileOut.write(startPage);
+                fileOut.write(startPage+" ");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -154,9 +154,9 @@ public class Run {
                 try {
                     artistService.getBaseMapper().insert(artistEntity);
                 } catch (Exception e) {
+                    e.printStackTrace();
                     System.out.println(artistEntity);
                     System.out.println(artistEntity.getProfile().length());
-                    System.exit(-3);
                 }
                 rs.add(artistEntity.getId());
             }

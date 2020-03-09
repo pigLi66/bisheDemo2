@@ -2,6 +2,8 @@ package com.lsl.demo.first.sys.controller;
 
 
 import com.lsl.demo.first.sys.dto.LoginResponse;
+import com.lsl.demo.first.utils.BaseContextHandler;
+import com.lsl.demo.first.utils.annotation.interceptor.handler.Auth;
 import com.lsl.demo.first.utils.token.Token;
 import com.lsl.demo.first.utils.validate.ValidatorUtil;
 import com.lsl.demo.first.sys.dto.LoginDto;
@@ -68,5 +70,10 @@ public class UserController {
         return ResponseEntity.ok(loginResponse);
     }
 
+    @Auth
+    @GetMapping("/picture")
+    public ResponseEntity<String> getPicUrl() {
+        return ResponseEntity.ok(this.userService.getById(BaseContextHandler.getUserId()).getPictureUrl());
+    }
 
 }

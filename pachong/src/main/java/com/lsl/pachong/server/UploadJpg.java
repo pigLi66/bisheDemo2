@@ -6,9 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.Socket;
-import java.net.URL;
-import java.net.URLConnection;
+import java.net.*;
 
 /**
  * @author lisiliang
@@ -18,17 +16,21 @@ import java.net.URLConnection;
 public class UploadJpg {
 
     private static final int DEFAULT_PORT = 9825;
-    private static final String DEFAULT_HOST = "lslllxq.top";
-    private String host;
-    private int port;
+    private static final String DEFAULT_IP_ADDRESS = "47.103.198.46";
     private static final int BUFFER_SIZE = 1024;
+    private InetAddress ip;
+    private int port;
 
-    public UploadJpg() {
-        this(DEFAULT_HOST, DEFAULT_PORT);
+    public UploadJpg() throws UnknownHostException {
+        this(DEFAULT_IP_ADDRESS, DEFAULT_PORT);
     }
 
-    public UploadJpg(String host, int port) {
-        this.host = host;
+    public UploadJpg(String host, int port) throws UnknownHostException {
+        this(InetAddress.getByName(host), port);
+    }
+
+    public UploadJpg(InetAddress ip, int port) {
+        this.ip = ip;
         this.port = port;
     }
 
@@ -48,7 +50,7 @@ public class UploadJpg {
 
     public String upload(InputStream inputStream) {
         String fileUrl = null;
-        try (Socket clientSocket = new Socket(this.host, this.port)) {
+        try (Socket clientSocket = new Socket(this.ip, this.port)) {
             InputStream socketIn = clientSocket.getInputStream();
             OutputStream socketOut = clientSocket.getOutputStream();
 

@@ -23,6 +23,28 @@ import java.util.Objects;
 public class CommentCountServiceImpl extends ServiceImpl<CommentCountMapper, CommentCountEntity> implements ICommentCountService {
 
     @Override
+    synchronized public Integer saveOrDelete(CommentCountDto dto) {
+        int rs;
+        QueryWrapper<CommentCountEntity> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("comment_id", dto.getCommentId());
+        queryWrapper.eq("user_id", dto.getUserId());
+        queryWrapper.eq("type", dto.getType());
+        CommentCountEntity entity = this.baseMapper.selectOne(queryWrapper);
+        if (null == entity) {
+            this.save(dto);
+            rs = 1;
+        } else if ("0".equals(entity.getValid())) {
+            this.baseMapper.deleteById(entity.getId());
+            rs = -1;
+        } else {
+            entity.setValid("0");
+            this.baseMapper.updateById(entity);
+            rs = 1;
+        }
+        return rs;
+    }
+
+    @Override
     public String save(CommentCountDto dto) {
         QueryWrapper<CommentCountEntity> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("comment_id", dto.getCommentId());
@@ -54,7 +76,7 @@ public class CommentCountServiceImpl extends ServiceImpl<CommentCountMapper, Com
         QueryWrapper<CommentCountEntity> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("comment_id", commentId);
         queryWrapper.eq("type", type);
-        return this.baseMapper.selectList(queryWrapper).size();
+        return this.baseMapper.selectCount(queryWrapper);
     }
 
 }

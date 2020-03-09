@@ -2,4 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lsl.demo.first.common.mapper.CommentMapper">
 
+    <select id="listCommentInfoById" parameterType="java.util.List"
+            resultType="com.lsl.demo.first.common.dto.CommentInfoRSDto">
+        SELECT c.collect_ids AS collectIds,
+                su.id AS userId,
+                sui.user_name AS userName,
+                su.picture_url AS pictureUrl,
+                c.comment AS comment,
+                c.id as commentId
+        FROM comment c,
+                sys_user su,
+                sys_user_info sui
+        WHERE c.id in
+        <foreach item="item" index="index" collection="ids"
+                 open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        AND c.user_id = su.id
+        AND c.user_id = sui.user_id;
+    </select>
+
 </mapper>

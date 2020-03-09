@@ -6,7 +6,7 @@ package com.lsl.demo.first.utils.token;
  */
 public class TokenBuilder {
 
-    public static Token buildToken(String token) {
+    public static Token buildByEncode(String token) {
         Token t = new Token();
         t.setToken(token);
         return t;

@@ -31,7 +31,8 @@ public class RunMovie {
             // 获取电影信息，包括 导演、演员、类型、片长等
             rs = MovieInfoResolver.resolver(document);
         } catch (Exception e) {
-            e.printStackTrace();
+            Usually.print(urlPath);
+            throw new PaChongException(urlPath, e);
         }
         return rs;
     }

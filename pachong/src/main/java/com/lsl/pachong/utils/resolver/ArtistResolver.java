@@ -35,11 +35,11 @@ public class ArtistResolver {
             Elements elementsImg = elementDiv.getElementsByTag("img");
             Element imgElement = elementsImg.get(0);
             rs = imgElement.attr("alt");
-            return rs.split(" ")[0];
+            return rs.split(" ")[0].trim();
         } catch (NullPointerException e) {
             Usually.print(document.baseUri());
             e.printStackTrace();
-            return null;
+            return "";
         }
     }
 
@@ -60,7 +60,7 @@ public class ArtistResolver {
         } catch (NullPointerException e) {
             Usually.print(document.baseUri());
             e.printStackTrace();
-            return null;
+            return "";
         }
     }
 
@@ -78,21 +78,21 @@ public class ArtistResolver {
                 }
             });
             if (rs.length() == 0) {
-                return null;
+                return "";
             }
             String[] t = rs.toString().split(":");
             if (t.length < 2) {
-                return null;
+                return "";
             }
-            return t[1];
+            return t[1].trim();
         } catch (NullPointerException e) {
             Usually.print(document.baseUri());
             e.printStackTrace();
-            return null;
+            return "";
         } catch (NumberFormatException e) {
             Usually.print(document.baseUri());
             System.out.println(rs);
-            return null;
+            return "";
         }
     }
 
@@ -112,7 +112,7 @@ public class ArtistResolver {
         } catch (NullPointerException e) {
             Usually.print(document.baseUri());
             e.printStackTrace();
-            return null;
+            return "";
         }
     }
 
@@ -132,7 +132,7 @@ public class ArtistResolver {
         } catch (NullPointerException e) {
             Usually.print(document.baseUri());
             e.printStackTrace();
-            return null;
+            return "";
         }
     }
 
@@ -145,14 +145,16 @@ public class ArtistResolver {
                 rs = allHiddenElements.get(0).text();
             }
             if (rs == null) {
-                return null;
+                Element intro = document.getElementById("intro");
+                Elements elements = intro.getElementsByClass("bd");
+                return elements.text();
             } else {
                 return rs.trim();
             }
         } catch (NullPointerException e) {
             Usually.print(document.baseUri());
             e.printStackTrace();
-            return null;
+            return "";
         }
     }
 
@@ -162,11 +164,11 @@ public class ArtistResolver {
             Element headLineElement = document.getElementById("headline");
             Elements imgElements = headLineElement.getElementsByTag("img");
             rs = imgElements.get(0).attr("src");
-            return rs;
+            return rs.trim();
         } catch (NullPointerException e) {
             Usually.print(document.baseUri());
             e.printStackTrace();
-            return null;
+            return "";
         }
     }
 

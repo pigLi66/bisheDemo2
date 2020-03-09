@@ -4,6 +4,7 @@ package com.lsl.demo.first.common.controller;
 import com.lsl.demo.first.common.dto.LevelDto;
 import com.lsl.demo.first.common.service.ILevelService;
 import com.lsl.demo.first.utils.BaseContextHandler;
+import com.lsl.demo.first.utils.annotation.interceptor.handler.Auth;
 import com.lsl.demo.first.utils.enums.Operation;
 import com.lsl.demo.first.utils.exceptions.BusinessException;
 import com.lsl.demo.first.utils.validate.ValidatorUtil;
@@ -32,6 +33,7 @@ public class LevelController {
     @Autowired
     private ILevelService levelService;
 
+    @Auth
     @ApiOperation("保存或者更新用户评级")
     @PutMapping
     public ResponseEntity<String> saveOrUpLevel(@RequestBody LevelDto dto) {
@@ -54,6 +56,7 @@ public class LevelController {
         return ResponseEntity.ok(this.levelService.getLevel(movieId, userId));
     }
 
+    @Auth
     @ApiOperation("获取当前用户对电影的评级")
     @GetMapping("/movieId")
     public ResponseEntity<Double> getLevel(@PathVariable String movieId) {

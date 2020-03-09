@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 @SpringBootTest
-class BisheDemo2ApplicationTests {
+class AdminApplicationTests {
 
 	@Test
 	void testService(){

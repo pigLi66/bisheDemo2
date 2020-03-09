@@ -15,6 +15,13 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ICommentCountService extends IService<CommentCountEntity> {
 
     /**
+     * 保存或者取消点赞
+     * @param dto
+     * @return
+     */
+    Integer saveOrDelete(CommentCountDto dto);
+
+    /**
      * 保存用户行为
      * @param dto
      */

@@ -37,11 +37,11 @@ public class MovieInfoResolver {
     private static String parseClassId(Document document) {
         try {
             Elements elements = document.getElementsByAttributeValue("property", "v:genre");
-            return elements.stream().map(Element::text).collect(Collectors.joining(","));
+            return elements.stream().map(Element::text).collect(Collectors.joining(",")).trim();
         } catch (NullPointerException e) {
             Usually.print(document.baseUri());
             e.printStackTrace();
-            return null;
+            return "";
         }
     }
 
@@ -52,7 +52,7 @@ public class MovieInfoResolver {
         } catch (NullPointerException e) {
             Usually.print(document.baseUri());
             e.printStackTrace();
-            return null;
+            return "";
         }
     }
 
@@ -122,11 +122,11 @@ public class MovieInfoResolver {
             } catch (Exception e) {
                 throw new RuntimeException("parse release time exception", e);
             }
-            return rs;
+            return rs.trim();
         } catch (NullPointerException e) {
             Usually.print(document.baseUri());
             e.printStackTrace();
-            return null;
+            return "";
         }
     }
 
@@ -139,11 +139,11 @@ public class MovieInfoResolver {
             } catch (Exception e) {
                 throw new RuntimeException("parse span exception", e);
             }
-            return rs;
+            return rs.trim();
         } catch (NullPointerException e) {
             Usually.print(document.baseUri());
             e.printStackTrace();
-            return null;
+            return "";
         }
     }
 
@@ -158,7 +158,7 @@ public class MovieInfoResolver {
                     if (es.size() > 0) {
                         rs = es.get(0).text();
                     } else {
-                        rs = null;
+                        rs = "";
                     }
                 } else {
                     rs = elements.stream().map(Element::text).collect(Collectors.joining(","));
@@ -166,11 +166,11 @@ public class MovieInfoResolver {
             } catch (Exception e) {
                 throw new RuntimeException("parse profile exception", e);
             }
-            return rs;
+            return rs.trim();
         } catch (NullPointerException e) {
             Usually.print(document.baseUri());
             e.printStackTrace();
-            return null;
+            return "";
         }
     }
 
@@ -198,7 +198,7 @@ public class MovieInfoResolver {
                 Element element = document.getElementById("mainpic");
                 Elements elements = element.getElementsByTag("img");
                 if (elements.isEmpty()) {
-                    return null;
+                    return "";
                 }
                 rs = elements.get(0).attr("src");
             } catch (Exception e) {
@@ -208,7 +208,7 @@ public class MovieInfoResolver {
         } catch (NullPointerException e) {
             Usually.print(document.baseUri());
             e.printStackTrace();
-            return null;
+            return "";
         }
     }
 

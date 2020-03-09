@@ -19,7 +19,6 @@ public class CommentCountDto {
     @NotBlank(message = "commentId不能为空")
     private String commentId;
 
-    @NotBlank(message = "userId不能为空")
     private String userId;
 
     @ApiModelProperty("统计评论的类别，点赞数使用type=0")

@@ -23,6 +23,8 @@ import java.util.Scanner;
 // 演示例子，执行 main 方法控制台输入模块表名回车自动生成对应项目目录中
 public class CodeGenerator {
 
+    private static final String proPath = "F:\\实习_2019\\stu\\spring_stu_Internet\\bisheDemo2\\admin";
+
     private static final String URL = "jdbc:mysql://47.103.198.46:3306/stu";
     private static final String user = "lisiliang";
     private static final String pwd = "123456";
@@ -59,11 +61,13 @@ public class CodeGenerator {
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        String projectPath = System.getProperty("user.dir");
+        //String projectPath = System.getProperty("user.dir");
+        String projectPath = proPath;
+        System.out.println(projectPath);
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor(author);
         gc.setOpen(false);
-        gc.setEntityName("%Entity");
+        gc.setEntityName("%sEntity");
         // gc.setSwagger2(true); 实体属性 Swagger2 注解
         mpg.setGlobalConfig(gc);
 

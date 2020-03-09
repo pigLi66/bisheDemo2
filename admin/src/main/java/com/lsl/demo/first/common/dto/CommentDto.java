@@ -1,5 +1,7 @@
 package com.lsl.demo.first.common.dto;
 
+import com.lsl.demo.first.utils.validate.AddGroup;
+import com.lsl.demo.first.utils.validate.UpdateGroup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -16,22 +18,10 @@ import javax.validation.constraints.NotBlank;
 public class CommentDto {
 
     /**
-     * 电影id
-     */
-    @NotBlank(message = "moviId不能为空")
-    private String movieId;
-
-    /**
-     * 用户id
-     */
-    @NotBlank(message = "userId不能为空")
-    private String userId;
-
-    /**
      * 用户评论
      */
     @ApiModelProperty("用户评论内容")
-    @NotBlank(message = "评论不能为空")
+    @NotBlank(message = "评论不能为空", groups = {AddGroup.class, UpdateGroup.class})
     private String comment;
 
 }

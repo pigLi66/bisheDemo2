@@ -1,6 +1,9 @@
 package com.lsl.demo.first.common.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lsl.demo.first.common.dto.CommentDto;
+import com.lsl.demo.first.common.dto.CommentInfoRSDto;
 import com.lsl.demo.first.common.entity.CommentEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -24,6 +27,22 @@ public interface ICommentService extends IService<CommentEntity> {
     String saveComment(CommentDto dto);
 
     /**
+     * 根据id更新评论数据
+     * @param dto
+     * @return
+     */
+    String updateById(String id, CommentDto dto);
+
+    /**
+     * 获取一个页面的数据
+     * @param startPage
+     * @param pageSize
+     * @param comment
+     * @return
+     */
+    IPage<CommentInfoRSDto> getPage(int startPage, int pageSize, String comment);
+
+    /**
      * 获取一个用户的所有评论
      * @param userId
      * @return
@@ -31,17 +50,26 @@ public interface ICommentService extends IService<CommentEntity> {
     List<CommentEntity> getUserCommentList(String userId);
 
     /**
-     * 获取一个电影的所有评论
-     * @param movieId
+     * 获取一个评论集下的一页评论
+     * @param startPage
+     * @param pageSize
+     * @param collectId
      * @return
      */
-    List<CommentEntity> getMovieCommentList(String movieId);
+    Page<CommentInfoRSDto> getMovieCommentPage(int startPage, int pageSize, String collectId);
+
+    /**
+     * 用过id 获取评论信息
+     * @param id
+     * @return
+     */
+    CommentInfoRSDto getCommentInfoById(String id);
 
     /**
      * 删除一个电影下的所有评论
-     * @param movieId
+     * @param commentId
      */
-    void deleteMovieComment(String movieId);
+    void deleteMovieComment(String commentId);
 
     /**
      * 删除一个用户的所有评论

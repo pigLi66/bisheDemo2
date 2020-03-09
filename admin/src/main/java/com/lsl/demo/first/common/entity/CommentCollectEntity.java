@@ -8,34 +8,39 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 电影评论表
+ * 
  * </p>
  *
  * @author lsl_ja
- * @since 2020-02-13
+ * @since 2020-03-04
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@TableName("comment")
-public class CommentEntity extends BaseEntity {
+@TableName("comment_collect")
+public class CommentCollectEntity extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * 评论所属类别标识id
+     * 评论类别名
      */
-    private String collectIds;
+    private String name;
 
     /**
-     * 用户id
+     * 创建者
      */
-    private String userId;
+    private String createBy;
 
     /**
-     * 用户评论
+     * 简介
      */
-    private String comment;
+    private String profile;
+
+    /**
+     * 图片地址
+     */
+    private String pictureUrl;
 
 
 }

@@ -4,8 +4,10 @@ import cn.hutool.core.util.CharsetUtil;
 import cn.hutool.crypto.Mode;
 import cn.hutool.crypto.Padding;
 import cn.hutool.crypto.symmetric.AES;
+import com.lsl.demo.first.utils.exceptions.BaseException;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.commons.httpclient.HttpStatus;
 
 import java.util.Date;
 
@@ -55,7 +57,13 @@ public class Token {
     }
 
     private void deToken() {
-        String[] s = aes.decryptStr(token, CharsetUtil.CHARSET_UTF_8).split(":");
+        String[] s;
+        try {
+            s = aes.decryptStr(token, CharsetUtil.CHARSET_UTF_8).split(":");
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new BaseException("token 不合法", HttpStatus.SC_BAD_REQUEST);
+        }
         this.userId = s[0];
         this.timeOut = new Date(Long.parseLong(s[1]));
     }
@@ -66,7 +74,7 @@ public class Token {
 
     public void refresh(Date date) {
         this.timeOut = date;
-        deToken();
+        enToken();
     }
 
 }

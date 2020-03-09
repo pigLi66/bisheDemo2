@@ -25,6 +25,7 @@ public class RunArtist {
             rs = ArtistResolver.resolve(document);
         } catch (Exception e) {
             e.printStackTrace();
+            System.exit(-2);
         }
         return rs;
     }

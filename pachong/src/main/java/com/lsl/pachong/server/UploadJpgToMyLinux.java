@@ -2,6 +2,7 @@ package com.lsl.pachong.server;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.UnknownHostException;
 
 /**
  * @author lisiliang
@@ -16,7 +17,14 @@ public class UploadJpgToMyLinux {
     private static final UploadJpg SERVER;
 
     static {
-        SERVER = new UploadJpg();
+        UploadJpg t;
+        try {
+            t = new UploadJpg();
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+            t = null;
+        }
+        SERVER = t;
     }
 
     public static String upload(String filePath) {

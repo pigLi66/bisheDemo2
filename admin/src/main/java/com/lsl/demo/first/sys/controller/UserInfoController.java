@@ -5,6 +5,7 @@ import com.lsl.demo.first.sys.dto.UserInfoDto;
 import com.lsl.demo.first.sys.entity.UserInfoEntity;
 import com.lsl.demo.first.sys.service.IUserInfoService;
 import com.lsl.demo.first.utils.BaseContextHandler;
+import com.lsl.demo.first.utils.annotation.interceptor.handler.Auth;
 import com.lsl.demo.first.utils.enums.Operation;
 import com.lsl.demo.first.utils.validate.AddGroup;
 import com.lsl.demo.first.utils.validate.UpdateGroup;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.*;
  * @author lsl_ja
  * @since 2020-02-13
  */
+@Auth
 @Api("用户信息相关接口")
 @RestController
 @RequestMapping("/sys/user/info")
@@ -45,6 +47,7 @@ public class UserInfoController {
         return ResponseEntity.ok(this.userInfoService.getUserInfo(BaseContextHandler.getUserId()));
     }
 
+    @Auth(users = {"admin"})
     @ApiOperation("获取一个用户的信息")
     @GetMapping("/{userId}")
     public ResponseEntity<UserInfoEntity> getUserInfo(@PathVariable String userId) {

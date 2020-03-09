@@ -1,6 +1,7 @@
 package com.lsl.demo.first.config;
 
 import com.lsl.demo.first.interceptor.AuthenticationInterceptor;
+import com.lsl.demo.first.interceptor.OptionMethodInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -17,10 +18,15 @@ public class WebConfig implements WebMvcConfigurer {
     @Autowired
     private AuthenticationInterceptor authenticationInterceptor;
 
+    @Autowired
+    private OptionMethodInterceptor optionMethodInterceptor;
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(optionMethodInterceptor);
         registry.addInterceptor(authenticationInterceptor).excludePathPatterns("/swagger-ui.html",
                 "/swagger-resources/**", "/v2/api-docs", "/webjars/springfox-swagger-ui/**",
-                "/sys/user/login", "/sys/user/register", "/common/**");
+                "/sys/user/login", "/sys/user/register",
+                "/sys/artist/**");
     }
 }

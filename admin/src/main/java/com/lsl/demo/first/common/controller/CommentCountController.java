@@ -3,6 +3,8 @@ package com.lsl.demo.first.common.controller;
 
 import com.lsl.demo.first.common.dto.CommentCountDto;
 import com.lsl.demo.first.common.service.ICommentCountService;
+import com.lsl.demo.first.utils.BaseContextHandler;
+import com.lsl.demo.first.utils.annotation.interceptor.handler.Auth;
 import com.lsl.demo.first.utils.enums.Operation;
 import com.lsl.demo.first.utils.exceptions.BusinessException;
 import com.lsl.demo.first.utils.validate.ValidatorUtil;
@@ -32,6 +34,15 @@ public class CommentCountController {
     @Autowired
     private ICommentCountService commentCountService;
 
+    @Auth
+    @PutMapping
+    public ResponseEntity<Integer> saveOrDelete(@RequestBody CommentCountDto dto) {
+        ValidatorUtil.validateEntity(dto);
+        dto.setUserId(BaseContextHandler.getUserId());
+        return ResponseEntity.ok(this.commentCountService.saveOrDelete(dto));
+    }
+
+    @Auth
     @ApiOperation("电影评论计数，点赞传入type=0")
     @PostMapping
     public ResponseEntity<String> save(@RequestBody CommentCountDto dto) {
@@ -48,6 +59,7 @@ public class CommentCountController {
         return new ResponseEntity<>(String.valueOf(this.commentCountService.count(commentId, type)), HttpStatus.OK);
     }
 
+    @Auth
     @ApiOperation("根据id 删除一个评论操作，例如取消一个点赞")
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteById(@PathVariable String id) {
@@ -55,9 +67,10 @@ public class CommentCountController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @Auth
     @ApiOperation("根据评论id 和type 删除记录, 例子：取消点赞type = 0")
     @DeleteMapping
-    public ResponseEntity delete(@RequestParam String commentId, @RequestParam String type) {
+    public ResponseEntity delete(String commentId, String type) {
         if (Objects.isNull(commentId) || Objects.isNull(type)) {
             throw new BusinessException(Operation.FAIL.get());
         }
