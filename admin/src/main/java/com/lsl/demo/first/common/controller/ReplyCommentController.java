@@ -7,7 +7,7 @@ import com.lsl.demo.first.common.entity.ReplyCommentEntity;
 import com.lsl.demo.first.common.service.IReplyCommentService;
 import com.lsl.demo.first.utils.BaseContextHandler;
 import com.lsl.demo.first.utils.ConvertUtil;
-import com.lsl.demo.first.utils.annotation.interceptor.handler.Auth;
+import com.lsl.demo.first.utils.annotation.interceptor.Auth;
 import com.lsl.demo.first.utils.validate.AddGroup;
 import com.lsl.demo.first.utils.validate.ValidatorUtil;
 import org.springframework.beans.factory.annotation.Autowired;

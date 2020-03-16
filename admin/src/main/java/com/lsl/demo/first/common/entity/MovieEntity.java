@@ -1,12 +1,10 @@
 package com.lsl.demo.first.common.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.lsl.demo.first.utils.entity.BaseEntity;
+import com.lsl.demo.first.utils.base.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
-
-import java.time.LocalDate;
 
 /**
  * <p>

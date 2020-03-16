@@ -3,7 +3,8 @@ package com.lsl.demo.first.sys.controller;
 
 import com.lsl.demo.first.sys.dto.LoginResponse;
 import com.lsl.demo.first.utils.BaseContextHandler;
-import com.lsl.demo.first.utils.annotation.interceptor.handler.Auth;
+import com.lsl.demo.first.utils.annotation.aop.MyTest;
+import com.lsl.demo.first.utils.annotation.interceptor.Auth;
 import com.lsl.demo.first.utils.token.Token;
 import com.lsl.demo.first.utils.validate.ValidatorUtil;
 import com.lsl.demo.first.sys.dto.LoginDto;
@@ -32,16 +33,12 @@ public class UserController {
     @Autowired
     private IUserService userService;
 
+    @MyTest
     @ApiOperation("登陆用")
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@RequestBody LoginDto dto) {
-        System.out.println("login");
-        System.out.println(dto);
         ValidatorUtil.validateEntity(dto);
-
         UserEntity user = userService.login(dto);
-        System.out.println(user);
-
         Token token = new Token(user.getId());
         LoginResponse loginResponse = new LoginResponse();
         loginResponse.setMessage("登陆成功");
@@ -57,6 +54,7 @@ public class UserController {
         */
     }
 
+    @MyTest
     @ApiOperation("注册用")
     @PostMapping("/register")
     public ResponseEntity<LoginResponse> register(@RequestBody LoginDto dto) {
@@ -70,6 +68,7 @@ public class UserController {
         return ResponseEntity.ok(loginResponse);
     }
 
+    @MyTest
     @Auth
     @GetMapping("/picture")
     public ResponseEntity<String> getPicUrl() {

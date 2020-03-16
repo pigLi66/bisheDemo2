@@ -14,8 +14,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.function.Supplier;
 
 
 /**
@@ -48,7 +50,6 @@ public class PaChongApplicationTest {
         startPage = fileIn.nextInt();
         run.setSize(40);
         Usually.print(startPage);
-        Thread.sleep(20000);
         run.run(startPage);
     }
 

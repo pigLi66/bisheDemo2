@@ -1,4 +1,4 @@
-package com.lsl.demo.first.utils.annotation.interceptor.handler;
+package com.lsl.demo.first.utils.annotation.interceptor;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

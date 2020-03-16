@@ -2,6 +2,7 @@ package com.lsl.demo.first.sys.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.lsl.demo.first.utils.ConvertUtil;
+import com.lsl.demo.first.utils.annotation.aop.MyTest;
 import com.lsl.demo.first.utils.exceptions.UserException;
 import com.lsl.demo.first.sys.dto.LoginDto;
 import com.lsl.demo.first.sys.entity.UserEntity;
@@ -23,9 +24,9 @@ import java.util.Objects;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> implements IUserService {
 
+    @MyTest
     @Override
     public UserEntity login(LoginDto dto) {
-        System.out.println("service.login");
         QueryWrapper<UserEntity> wrapper = new QueryWrapper<>();
         wrapper.eq("name", dto.getName());
         wrapper.eq("password", dto.getPassword());
@@ -47,9 +48,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
             throw new UserException("账号已存在");
         }
         user = ConvertUtil.sourceToTarget(dto, UserEntity.class);
-        System.out.println(dto.getType());
         user.setType(String.valueOf(dto.getType()));
-        System.out.println(user.getType() + "\\");
         this.baseMapper.insert(user);
         return user.getId();
     }

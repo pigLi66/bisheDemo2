@@ -4,7 +4,7 @@ package com.lsl.demo.first.common.controller;
 import com.lsl.demo.first.common.dto.LevelDto;
 import com.lsl.demo.first.common.service.ILevelService;
 import com.lsl.demo.first.utils.BaseContextHandler;
-import com.lsl.demo.first.utils.annotation.interceptor.handler.Auth;
+import com.lsl.demo.first.utils.annotation.interceptor.Auth;
 import com.lsl.demo.first.utils.enums.Operation;
 import com.lsl.demo.first.utils.exceptions.BusinessException;
 import com.lsl.demo.first.utils.validate.ValidatorUtil;

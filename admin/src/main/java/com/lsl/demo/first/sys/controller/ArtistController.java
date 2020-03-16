@@ -4,11 +4,8 @@ package com.lsl.demo.first.sys.controller;
 import com.lsl.demo.first.sys.dto.ArtistDto;
 import com.lsl.demo.first.sys.entity.ArtistEntity;
 import com.lsl.demo.first.sys.service.IArtistService;
-import com.lsl.demo.first.utils.validate.AddGroup;
-import com.lsl.demo.first.utils.validate.UpdateGroup;
-import com.lsl.demo.first.utils.validate.ValidatorUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import com.lsl.demo.first.utils.annotation.interceptor.Auth;
+import com.lsl.demo.first.utils.base.controller.BaseCRUDController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,31 +19,29 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/sys/artist")
-public class ArtistController {
+public class ArtistController extends BaseCRUDController<ArtistDto, ArtistEntity, IArtistService> {
 
-    @Autowired
-    private IArtistService artistService;
-
+    @Auth
     @PostMapping
-    public ResponseEntity<String> saveArtist(@RequestBody ArtistDto dto) {
-        ValidatorUtil.validateEntity(dto, AddGroup.class    );
-        return new ResponseEntity<>("接口暂未开放", HttpStatus.FORBIDDEN);
+    @Override
+    public ResponseEntity<String> save(@RequestBody ArtistDto dto) {
+        return super.save(dto);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ArtistEntity> getArtistById(@PathVariable String id) {
-        return ResponseEntity.ok(artistService.getById(id));
+    @Auth
+    @Override
+    public ResponseEntity<String> deleteById(String id) {
+        return super.deleteById(id);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<String> updateArtistById(@RequestBody ArtistDto dto, @PathVariable String id) {
-        ValidatorUtil.validateEntity(dto, UpdateGroup.class);
-        return new ResponseEntity<>("接口暂未开放", HttpStatus.FORBIDDEN);
+    @Override
+    protected Class<ArtistEntity> getEntityClass() {
+        return ArtistEntity.class;
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteArtistById(@PathVariable String id) {
-        return new ResponseEntity<>("接口暂未开放", HttpStatus.FORBIDDEN);
+    @Override
+    protected ArtistEntity getEntity() {
+        return new ArtistEntity();
     }
 
 }

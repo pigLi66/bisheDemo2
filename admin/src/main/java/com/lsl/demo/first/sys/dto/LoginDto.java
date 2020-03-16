@@ -30,5 +30,4 @@ public class LoginDto {
     @Min(1)
     @ApiModelProperty("用户的类型，0表示管理员，1表示普通用户，2白表示导演，3表示演员")
     private Integer type;
-
 }

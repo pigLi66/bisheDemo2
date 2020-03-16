@@ -5,7 +5,7 @@ import com.lsl.demo.first.sys.dto.UserInfoDto;
 import com.lsl.demo.first.sys.entity.UserInfoEntity;
 import com.lsl.demo.first.sys.service.IUserInfoService;
 import com.lsl.demo.first.utils.BaseContextHandler;
-import com.lsl.demo.first.utils.annotation.interceptor.handler.Auth;
+import com.lsl.demo.first.utils.annotation.interceptor.Auth;
 import com.lsl.demo.first.utils.enums.Operation;
 import com.lsl.demo.first.utils.validate.AddGroup;
 import com.lsl.demo.first.utils.validate.UpdateGroup;

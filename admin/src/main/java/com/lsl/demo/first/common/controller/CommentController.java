@@ -7,7 +7,7 @@ import com.lsl.demo.first.common.dto.CommentDto;
 import com.lsl.demo.first.common.dto.CommentInfoRSDto;
 import com.lsl.demo.first.common.entity.CommentEntity;
 import com.lsl.demo.first.common.service.ICommentService;
-import com.lsl.demo.first.utils.annotation.interceptor.handler.Auth;
+import com.lsl.demo.first.utils.annotation.interceptor.Auth;
 import com.lsl.demo.first.utils.enums.Operation;
 import com.lsl.demo.first.utils.validate.AddGroup;
 import com.lsl.demo.first.utils.validate.UpdateGroup;

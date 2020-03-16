@@ -3,6 +3,7 @@ package com.lsl.demo.first.utils.annotation.interceptor.handler;
 import cn.hutool.core.util.StrUtil;
 import com.lsl.demo.first.sys.entity.UserEntity;
 import com.lsl.demo.first.sys.service.IUserService;
+import com.lsl.demo.first.utils.annotation.interceptor.Auth;
 import com.lsl.demo.first.utils.exceptions.BaseException;
 import com.lsl.demo.first.utils.exceptions.LowUserLevelException;
 import com.lsl.demo.first.utils.exceptions.UnLoginException;

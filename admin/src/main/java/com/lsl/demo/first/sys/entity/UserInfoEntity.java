@@ -2,7 +2,7 @@ package com.lsl.demo.first.sys.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.time.LocalDate;
-import com.lsl.demo.first.utils.entity.BaseEntity;
+import com.lsl.demo.first.utils.base.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
