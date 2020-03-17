@@ -2,32 +2,25 @@ package com.lsl.pachong.run;
 
 import cn.hutool.core.lang.Assert;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.lsl.demo.first.common.entity.LevelEntity;
-import com.lsl.demo.first.common.entity.MovieEntity;
-import com.lsl.demo.first.common.mapper.MovieMapper;
-import com.lsl.demo.first.common.service.ILevelService;
-import com.lsl.demo.first.common.service.IMovieService;
-import com.lsl.demo.first.common.service.impl.MovieServiceImpl;
-import com.lsl.demo.first.sys.entity.ArtistEntity;
-import com.lsl.demo.first.sys.mapper.ArtistMapper;
-import com.lsl.demo.first.sys.service.IArtistService;
-import com.lsl.demo.first.sys.service.impl.ArtistServiceImpl;
+import com.lsl.demo.model.common.entity.LevelEntity;
+import com.lsl.demo.model.common.entity.MovieEntity;
+import com.lsl.demo.model.common.service.ILevelService;
+import com.lsl.demo.model.common.service.IMovieService;
+import com.lsl.demo.model.sys.entity.ArtistEntity;
+import com.lsl.demo.model.sys.service.IArtistService;
 import com.lsl.pachong.entity.Human;
 import com.lsl.pachong.entity.MovieBean;
 import com.lsl.pachong.entity.MovieInfoEntity;
 import com.lsl.pachong.exceptions.PaChongException;
-import com.lsl.pachong.server.UploadJpg;
-import com.lsl.pachong.server.UploadJpgToMyLinux;
+import com.lsl.demo.common.server.UploadJpgToMyLinux;
 import com.lsl.pachong.utils.common.Usually;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * @author lisiliang

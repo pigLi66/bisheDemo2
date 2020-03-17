@@ -1,12 +1,9 @@
 package com.lsl.pachong.run;
 
-import com.lsl.demo.first.sys.entity.ArtistEntity;
-import com.lsl.pachong.utils.common.Usually;
+import com.lsl.demo.model.sys.entity.ArtistEntity;
 import com.lsl.pachong.utils.resolver.ArtistResolver;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-
-import java.io.IOException;
 
 
 /**

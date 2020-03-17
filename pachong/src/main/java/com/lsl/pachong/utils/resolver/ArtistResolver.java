@@ -1,12 +1,10 @@
 package com.lsl.pachong.utils.resolver;
 
-import com.lsl.demo.first.sys.entity.ArtistEntity;
+import com.lsl.demo.model.sys.entity.ArtistEntity;
 import com.lsl.pachong.utils.common.Usually;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
-import java.time.LocalDate;
 
 /**
  * @author lisiliang
