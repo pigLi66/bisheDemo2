@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -104,6 +105,10 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, CommentEntity
     }
 
     private List<CommentInfoRSDto> listCommentInfoById(List<String> ids) {
+        if (ids.isEmpty()) {
+            return new ArrayList<>();
+        }
+
         List<CommentInfoRSDto> rsList = this.baseMapper.listCommentInfoById(ids);
         rsList.forEach(item -> item.setCount(commentCountService.count(item.getCommentId(), "0")));
         rsList.forEach(item ->{

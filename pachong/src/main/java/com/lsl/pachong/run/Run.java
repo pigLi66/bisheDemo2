@@ -1,6 +1,7 @@
 package com.lsl.pachong.run;
 
 import cn.hutool.core.lang.Assert;
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.lsl.demo.model.common.entity.LevelEntity;
 import com.lsl.demo.model.common.entity.MovieEntity;
@@ -106,7 +107,10 @@ public class Run {
                     movieEntity.setReleaseTime(movieInfoEntity.getReleaseTime());
                     movieEntity.setMovieName(item.getTitle());
                     movieEntity.setDoubanId(item.getId());
+
+                    movieEntity.setProfile(StrUtil.trim(movieEntity.getProfile()));
                     this.movieService.getBaseMapper().insert(movieEntity);
+
                     LevelEntity levelEntity = new LevelEntity();
                     levelEntity.setMovieId(movieEntity.getId());
                     levelEntity.setUserId("admin");
@@ -145,6 +149,7 @@ public class Run {
                 ArtistEntity artistEntity = RunArtist.run(human.getUrl());
                 artistEntity.setPictureUrl(UploadJpgToMyLinux.uploadByURL(artistEntity.getPictureUrl()));
                 try {
+                    artistEntity.setProfile(StrUtil.trim(artistEntity.getProfile()));
                     artistService.getBaseMapper().insert(artistEntity);
                 } catch (Exception e) {
                     e.printStackTrace();

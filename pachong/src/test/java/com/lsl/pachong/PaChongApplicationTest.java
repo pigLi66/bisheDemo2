@@ -1,7 +1,9 @@
 package com.lsl.pachong;
 
 
+import com.lsl.demo.model.common.entity.CommentCollectEntity;
 import com.lsl.demo.model.common.entity.MovieEntity;
+import com.lsl.demo.model.common.service.ICommentCollectService;
 import com.lsl.demo.model.common.service.IMovieService;
 import com.lsl.demo.model.sys.entity.ArtistEntity;
 import com.lsl.demo.model.sys.service.IArtistService;
@@ -36,6 +38,9 @@ public class PaChongApplicationTest {
     @Autowired
     private IMovieService movieService;
 
+    @Autowired
+    private ICommentCollectService commentCollectService;
+
     @Test
     void test() throws Exception {
         int[] arr = new int[1];
@@ -69,6 +74,26 @@ public class PaChongApplicationTest {
         run.setSize(40);
         Usually.print(startPage);
         run.run(startPage);
+    }
+
+    @Test
+    void initCollectDB() {
+        List<MovieEntity> movieEntityList = this.movieService.list();
+        movieEntityList.stream()
+                .map(item->{
+                    CommentCollectEntity rsEntity = new CommentCollectEntity();
+                    rsEntity.setCreateBy("admin");
+                    rsEntity.setName(item.getMovieName());
+                    if (item.getProfile().length() < 400) {
+                        rsEntity.setProfile(item.getProfile());
+                     } else {
+                        rsEntity.setProfile(item.getProfile().substring(0, 400) + "...");
+                    }
+                    rsEntity.setPictureUrl(item.getPictureUrl());
+                    System.out.println(rsEntity);
+                    return rsEntity;
+                })
+                .forEach(commentCollectService::save);
     }
 
     @Test
