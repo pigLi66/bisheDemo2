@@ -1,5 +1,7 @@
 package com.lsl.demo.common.interceptor;
 
+import com.lsl.demo.utils.BaseContextHandler;
+import org.eclipse.jetty.http.HttpMethod;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -24,10 +26,18 @@ public class OptionMethodInterceptor extends HandlerInterceptorAdapter {
         response.setCharacterEncoding("utf-8");
         response.setContentType("application/json; charset=utf-8");
 
-        if (request.getMethod().equalsIgnoreCase("option")) {
+        if (HttpMethod.OPTIONS.is(request.getMethod())) {
             return false;
         }
-
+        BaseContextHandler.set("request", request);
+        BaseContextHandler.set("response", response);
         return super.preHandle(request, response, handler);
     }
+
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+        BaseContextHandler.clear();
+        super.afterCompletion(request, response, handler, ex);
+    }
+
 }

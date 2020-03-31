@@ -1,5 +1,6 @@
 package com.lsl.demo.model.common.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.lsl.demo.model.common.dto.CommentCountDto;
 import com.lsl.demo.model.common.entity.CommentCountEntity;
@@ -10,6 +11,7 @@ import com.lsl.demo.utils.ConvertUtil;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * <p>
@@ -24,50 +26,51 @@ public class CommentCountServiceImpl extends ServiceImpl<CommentCountMapper, Com
 
     @Override
     synchronized public Integer saveOrDelete(CommentCountDto dto) {
-        int rs;
-        QueryWrapper<CommentCountEntity> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("comment_id", dto.getCommentId());
-        queryWrapper.eq("user_id", dto.getUserId());
-        queryWrapper.eq("type", dto.getType());
-        CommentCountEntity entity = this.baseMapper.selectOne(queryWrapper);
-        if (null == entity) {
-            this.save(dto);
-            rs = 1;
-        } else if ("0".equals(entity.getValid())) {
-            this.baseMapper.deleteById(entity.getId());
-            rs = -1;
-        } else {
-            entity.setValid("0");
-            this.baseMapper.updateById(entity);
-            rs = 1;
-        }
-        return rs;
+        Wrapper<CommentCountEntity> queryWrapper = new QueryWrapper<CommentCountEntity>().lambda()
+                .eq(CommentCountEntity::getCommentId, dto.getCommentId())
+                .eq(CommentCountEntity::getUserId, dto.getUserId())
+                .eq(CommentCountEntity::getType, dto.getType());
+        Optional<CommentCountEntity> entity = Optional.ofNullable(this.baseMapper.selectOne(queryWrapper));
+        return entity.map(item -> {
+            if ("0".equals(item.getValid())) {
+                baseMapper.deleteById(item.getId());
+                return -1;
+            } else {
+                item.setValid("0");
+                baseMapper.updateById(item);
+                return 1;
+            }
+        }).orElseGet(() -> {
+            save(dto);
+            return 1;
+        });
     }
 
     @Override
     public String save(CommentCountDto dto) {
-        QueryWrapper<CommentCountEntity> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("comment_id", dto.getCommentId());
-        queryWrapper.eq("user_id", dto.getUserId());
-        queryWrapper.eq("type", dto.getType());
-        CommentCountEntity entity = this.baseMapper.selectOne(queryWrapper);
+        Wrapper<CommentCountEntity> queryWrapper = new QueryWrapper<CommentCountEntity>().lambda()
+                .eq(CommentCountEntity::getCommentId, dto.getCommentId())
+                .eq(CommentCountEntity::getUserId, dto.getUserId())
+                .eq(CommentCountEntity::getType, dto.getType());
+        Optional<CommentCountEntity> entity = Optional.ofNullable(this.baseMapper.selectOne(queryWrapper));
 
-        if (Objects.isNull(entity)) {
-            entity = ConvertUtil.sourceToTarget(dto, CommentCountEntity.class);
-            this.baseMapper.insert(entity);
-        } else {
-            entity.setValid("0");
-            this.baseMapper.updateById(entity);
-        }
-        return entity.getId();
+        return entity.map(item -> {
+            item.setValid("0");
+            baseMapper.updateById(item);
+            return item.getId();
+        }).orElseGet(() -> {
+            CommentCountEntity insertEntity = ConvertUtil.sourceToTarget(dto, CommentCountEntity.class);
+            baseMapper.insert(insertEntity);
+            return insertEntity.getId();
+        });
     }
 
     @Override
     public void delete(CommentCountDto dto) {
-        QueryWrapper<CommentCountEntity> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("comment_id", dto.getCommentId());
-        queryWrapper.eq("user_id", dto.getUserId());
-        queryWrapper.eq("type", dto.getType());
+        Wrapper<CommentCountEntity> queryWrapper = new QueryWrapper<CommentCountEntity>().lambda()
+                .eq(CommentCountEntity::getCommentId, dto.getCommentId())
+                .eq(CommentCountEntity::getUserId, dto.getUserId())
+                .eq(CommentCountEntity::getType, dto.getType());
         this.baseMapper.delete(queryWrapper);
     }
 

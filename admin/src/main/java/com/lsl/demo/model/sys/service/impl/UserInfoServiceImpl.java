@@ -1,5 +1,6 @@
 package com.lsl.demo.model.sys.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.lsl.demo.model.sys.dto.UserInfoDto;
 import com.lsl.demo.model.sys.entity.UserInfoEntity;
@@ -64,9 +65,9 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoMapper, UserInfoEnt
 
     @Override
     public UserInfoEntity getUserInfo(String userId) {
-        QueryWrapper<UserInfoEntity> wrapper = new QueryWrapper<>();
-        wrapper.eq("user_id", userId);
-        wrapper.eq("valid", 0);
+        Wrapper<UserInfoEntity> wrapper = new QueryWrapper<UserInfoEntity>().lambda()
+                .eq(UserInfoEntity::getUserId, userId)
+                .eq(UserInfoEntity::getValid, 0);
         return this.baseMapper.selectOne(wrapper);
     }
 

@@ -1,5 +1,7 @@
 package com.lsl.demo.utils;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -29,6 +31,14 @@ public class BaseContextHandler {
             local.set(map);
         }
         return map.get(key);
+    }
+
+    public static HttpServletRequest getRequest() {
+        return (HttpServletRequest) BaseContextHandler.get("request");
+    }
+
+    public static HttpServletResponse getResponse() {
+        return (HttpServletResponse) BaseContextHandler.get("response");
     }
 
     public static void clear(){

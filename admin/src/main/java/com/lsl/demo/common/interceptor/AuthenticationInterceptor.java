@@ -40,16 +40,12 @@ public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
         if (!StrUtil.isBlank(tokenEncode)) {
             Token token = TokenBuilder.buildByEncode(tokenEncode);
             BaseContextHandler.setUserId(token.getUserId());
-            token.refresh();
+            if (token.getTimeOut().getTime() > System.currentTimeMillis()) {
+                token.refresh();
+            }
             response.setHeader(Token.HEADER_TOKEN, token.getToken());
         }
         return super.preHandle(request, response, handler);
-    }
-
-    @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        BaseContextHandler.clear();
-        super.afterCompletion(request, response, handler, ex);
     }
 
 }

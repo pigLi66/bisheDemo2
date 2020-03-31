@@ -1,6 +1,7 @@
 package com.lsl.pachong;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.lsl.demo.model.common.entity.CommentCollectEntity;
 import com.lsl.demo.model.common.entity.MovieEntity;
 import com.lsl.demo.model.common.service.ICommentCollectService;
@@ -13,6 +14,7 @@ import com.lsl.pachong.utils.string.StringUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Profile;
 import top.lslllxq.utils.print.Print;
 
 import java.io.FileInputStream;
@@ -26,6 +28,7 @@ import java.util.*;
  * @author lisiliang
  * @since 2020/2/25
  */
+@Profile("dev")
 @SpringBootTest
 public class PaChongApplicationTest {
 
@@ -67,7 +70,7 @@ public class PaChongApplicationTest {
     @Test
     void testPaChong() throws Exception {
         char c = '\0';
-        System.out.println("\'\\0\' = " + (int)c);
+        System.out.println("\'\\0\' = " + (int) c);
         int startPage;
         Scanner fileIn = new Scanner(new FileInputStream("F:\\实习_2019\\stu\\spring_stu_Internet\\bisheDemo2\\pageNow.txt"));
         startPage = fileIn.nextInt();
@@ -79,21 +82,7 @@ public class PaChongApplicationTest {
     @Test
     void initCollectDB() {
         List<MovieEntity> movieEntityList = this.movieService.list();
-        movieEntityList.stream()
-                .map(item->{
-                    CommentCollectEntity rsEntity = new CommentCollectEntity();
-                    rsEntity.setCreateBy("admin");
-                    rsEntity.setName(item.getMovieName());
-                    if (item.getProfile().length() < 400) {
-                        rsEntity.setProfile(item.getProfile());
-                     } else {
-                        rsEntity.setProfile(item.getProfile().substring(0, 400) + "...");
-                    }
-                    rsEntity.setPictureUrl(item.getPictureUrl());
-                    System.out.println(rsEntity);
-                    return rsEntity;
-                })
-                .forEach(commentCollectService::save);
+        movieEntityList.forEach(commentCollectService::initByMovie);
     }
 
     @Test

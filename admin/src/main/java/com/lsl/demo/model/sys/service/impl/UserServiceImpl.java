@@ -1,5 +1,6 @@
 package com.lsl.demo.model.sys.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.lsl.demo.common.exceptions.BaseException;
 import com.lsl.demo.common.server.UploadJpgToMyLinux;
@@ -33,10 +34,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
     @MyTest
     @Override
     public UserEntity login(LoginDto dto) {
-        QueryWrapper<UserEntity> wrapper = new QueryWrapper<>();
-        wrapper.eq("name", dto.getName());
-        wrapper.eq("password", dto.getPassword());
-        wrapper.eq("type", dto.getType());
+        Wrapper<UserEntity> wrapper = new QueryWrapper<UserEntity>().lambda()
+                .eq(UserEntity::getName, dto.getName())
+                .eq(UserEntity::getPassword, dto.getPassword())
+                .eq(UserEntity::getType, dto.getType());
         UserEntity user = this.baseMapper.selectOne(wrapper);
         if (Objects.isNull(user)) {
             throw new UserException("账号不存在或者密码错误");
@@ -46,9 +47,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
 
     @Override
     public String register(LoginDto dto) {
-        QueryWrapper<UserEntity> wrapper = new QueryWrapper<>();
-        wrapper.eq("name", dto.getName());
-        wrapper.eq("type", dto.getType());
+        Wrapper<UserEntity> wrapper = new QueryWrapper<UserEntity>().lambda()
+                .eq(UserEntity::getName, dto.getName())
+                .eq(UserEntity::getType, dto.getType());
         UserEntity user = this.baseMapper.selectOne(wrapper);
         if (Objects.nonNull(user)) {
             throw new UserException("账号已存在");

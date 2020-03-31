@@ -4,15 +4,14 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lsl.demo.model.common.entity.CommentCollectEntity;
+import com.lsl.demo.model.common.entity.MovieEntity;
 import com.lsl.demo.model.common.mapper.CommentCollectMapper;
 import com.lsl.demo.model.common.service.ICommentCollectService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lsl.demo.utils.BaseContextHandler;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -43,7 +42,7 @@ public class CommentCollectServiceImpl extends ServiceImpl<CommentCollectMapper,
             String t = comment.substring(start + 1, end);
             collects.add(StrUtil.trim(t));
         }
-        return this.saveAndGetId(collects);
+        return collects.size() == 0 ? collects : this.getId(collects);
     }
 
     @Override
@@ -53,6 +52,22 @@ public class CommentCollectServiceImpl extends ServiceImpl<CommentCollectMapper,
         collectQueryWrapper.like("name", collect);
         this.baseMapper.selectPage(rsPage, collectQueryWrapper);
         return rsPage;
+    }
+
+    @Override
+    public void initByMovie(MovieEntity movieEntity) {
+        Optional<CommentCollectEntity> commentCollectEntity =
+                Optional.ofNullable(this.baseMapper.selectOne(
+                new QueryWrapper<CommentCollectEntity>().lambda()
+                .eq(CommentCollectEntity::getName, movieEntity.getMovieName())
+        ));
+        CommentCollectEntity entity = commentCollectEntity.orElseGet(CommentCollectEntity::new);
+        entity.setPictureUrl(Objects.isNull(entity.getPictureUrl()) ? movieEntity.getPictureUrl() : entity.getPictureUrl());
+        entity.setCreateBy(Objects.isNull(entity.getCreateBy()) ? "admin" : entity.getCreateBy());
+        entity.setProfile(Objects.isNull(entity.getProfile()) ? movieEntity.getProfile() : entity.getProfile());
+        entity.setName(Objects.isNull(entity.getName()) ? movieEntity.getMovieName() : entity.getName());
+        entity.setId(Objects.isNull(entity.getId()) ? movieEntity.getId() : entity.getId());
+        this.saveOrUpdate(entity);
     }
 
     /**
@@ -76,6 +91,13 @@ public class CommentCollectServiceImpl extends ServiceImpl<CommentCollectMapper,
             this.baseMapper.insert(entity);
         }
         return entity.getId();
+    }
+
+    private List<String> getId(Collection<String> collects) {
+        return this.list(new QueryWrapper<CommentCollectEntity>().in("name", collects))
+                .stream()
+                .map(CommentCollectEntity::getId)
+                .collect(Collectors.toList());
     }
 
     private List<String> saveAndGetId(List<String> collects) {

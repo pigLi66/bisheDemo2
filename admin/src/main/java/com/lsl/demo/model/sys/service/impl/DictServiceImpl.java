@@ -1,15 +1,16 @@
 package com.lsl.demo.model.sys.service.impl;
 
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.lsl.demo.utils.ConvertUtil;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lsl.demo.common.exceptions.BusinessException;
 import com.lsl.demo.model.sys.dto.DictDto;
 import com.lsl.demo.model.sys.entity.DictEntity;
 import com.lsl.demo.model.sys.mapper.DictMapper;
 import com.lsl.demo.model.sys.service.IDictService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.lsl.demo.utils.ConvertUtil;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,10 +40,9 @@ public class DictServiceImpl extends ServiceImpl<DictMapper, DictEntity> impleme
 
     @Override
     public void upDictValue(String dictKey, String dictValue) {
-        UpdateWrapper<DictEntity> wrapper = new UpdateWrapper<>();
-        wrapper.eq("dict_key", dictKey);
-        wrapper.eq("valid", 0);
-
+        Wrapper<DictEntity> wrapper = new UpdateWrapper<DictEntity>().lambda()
+                .eq(DictEntity::getDictKey, dictKey)
+                .eq(DictEntity::getDictValue, dictValue);
         DictEntity entity = new DictEntity();
         entity.setDictValue(dictValue);
         this.baseMapper.update(entity, wrapper);
@@ -50,10 +50,10 @@ public class DictServiceImpl extends ServiceImpl<DictMapper, DictEntity> impleme
 
     @Override
     public String getDictValue(String dictKey) {
-        QueryWrapper<DictEntity> wrapper = new QueryWrapper<>();
-        wrapper.eq("dict_key", dictKey);
-        wrapper.eq("v_key", 0);
-        wrapper.eq("valid", 0);
+        Wrapper<DictEntity> wrapper = new QueryWrapper<DictEntity>().lambda()
+                .eq(DictEntity::getDictKey, dictKey)
+                .eq(DictEntity::getVKey, 0)
+                .eq(DictEntity::getValid, 0);
         DictEntity entity = this.baseMapper.selectOne(wrapper);
 
         if (Objects.isNull(entity)) {
@@ -97,11 +97,11 @@ public class DictServiceImpl extends ServiceImpl<DictMapper, DictEntity> impleme
 
     @Override
     public void upVValue(DictDto dictDto) {
-        QueryWrapper<DictEntity> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("dict_key", dictDto.getDictKey());
-        queryWrapper.ne("v_key", dictDto.getDictKey());
-        queryWrapper.eq("v_value", dictDto.getDictValue());
-        queryWrapper.eq("valid", 0);
+        Wrapper<DictEntity> queryWrapper = new QueryWrapper<DictEntity>().lambda()
+                .eq(DictEntity::getDictKey, dictDto.getDictKey())
+                .ne(DictEntity::getVKey, dictDto.getVKey())
+                .eq(DictEntity::getVValue, dictDto.getVValue())
+                .eq(DictEntity::getValid, 0);
 
         DictEntity dictEntity = this.baseMapper.selectOne(queryWrapper);
         if (Objects.nonNull(dictEntity)) {

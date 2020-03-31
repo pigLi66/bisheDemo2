@@ -3,6 +3,7 @@ package com.lsl.demo.model.common.service;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lsl.demo.model.common.entity.CommentCollectEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.lsl.demo.model.common.entity.MovieEntity;
 
 import java.util.List;
 
@@ -31,5 +32,11 @@ public interface ICommentCollectService extends IService<CommentCollectEntity> {
      * @return
      */
     Page<CommentCollectEntity> getPage(int startPage, int pageSize, String collect);
+
+    /**
+     * 新建一个和电影相关的评论集合
+     * @param movieEntity 电影实体
+     */
+    void initByMovie(MovieEntity movieEntity);
 
 }

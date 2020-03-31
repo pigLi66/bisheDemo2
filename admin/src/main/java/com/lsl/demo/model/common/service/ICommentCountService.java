@@ -24,6 +24,7 @@ public interface ICommentCountService extends IService<CommentCountEntity> {
     /**
      * 保存用户行为
      * @param dto
+     * @return
      */
     String save(CommentCountDto dto);
 
