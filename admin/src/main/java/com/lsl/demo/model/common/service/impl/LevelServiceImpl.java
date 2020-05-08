@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -62,7 +63,9 @@ public class LevelServiceImpl extends ServiceImpl<LevelMapper, LevelEntity> impl
         QueryWrapper<LevelEntity> wrapper = new QueryWrapper<>();
         wrapper.eq("movie_id", movieId);
         wrapper.eq("user_id", userId);
-        return this.baseMapper.selectOne(wrapper).getLevel();
+        return Optional.ofNullable(this.baseMapper.selectOne(wrapper))
+                .map(LevelEntity::getLevel)
+                .orElse(5.0);
     }
 
 }

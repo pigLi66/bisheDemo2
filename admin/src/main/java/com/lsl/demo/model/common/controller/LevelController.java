@@ -1,11 +1,13 @@
 package com.lsl.demo.model.common.controller;
 
 
+import com.lsl.demo.common.annotation.aop.MyTest;
 import com.lsl.demo.common.base.controller.BaseController;
 import com.lsl.demo.model.common.dto.LevelDto;
 import com.lsl.demo.model.common.entity.LevelEntity;
 import com.lsl.demo.model.common.service.ILevelService;
-import com.lsl.demo.utils.BaseContextHandler;
+import com.lsl.demo.model.sys.service.IRecommendService;
+import com.lsl.demo.utils.global.BaseContextHandler;
 import com.lsl.demo.common.annotation.interceptor.Auth;
 import com.lsl.demo.common.enums.Operation;
 import com.lsl.demo.common.exceptions.BusinessException;
@@ -35,18 +37,19 @@ public class LevelController extends BaseController<LevelEntity, ILevelService> 
     @ApiOperation("保存或者更新用户评级")
     @PutMapping
     public ResponseEntity<String> saveOrUpLevel(@RequestBody LevelDto dto) {
+        dto.setUserId(BaseContextHandler.getUserId());
         ValidatorUtil.validateEntity(dto);
         return ResponseEntity.ok(this.service.saveOrUpLevel(dto));
     }
 
     @ApiOperation("根据电影id 获取电影评级")
-    @GetMapping("{movieId}")
+    @GetMapping("/movie/{movieId}")
     public ResponseEntity<Double> getMovieLevel(@PathVariable String movieId) {
         return ResponseEntity.ok(this.service.getMovieLevel(movieId));
     }
 
     @ApiOperation("获取单个用户对电影评级")
-    @GetMapping
+    @GetMapping("/movieAndUser")
     public ResponseEntity<Double> getLevel(String movieId, String userId) {
         if (Objects.isNull(movieId) || Objects.isNull(userId)) {
             throw new BusinessException(Operation.FAIL.get());
@@ -56,8 +59,8 @@ public class LevelController extends BaseController<LevelEntity, ILevelService> 
 
     @Auth
     @ApiOperation("获取当前用户对电影的评级")
-    @GetMapping("/movieId")
-    public ResponseEntity<Double> getLevel(@PathVariable String movieId) {
+    @GetMapping()
+    public ResponseEntity<Double> getLevel(String movieId) {
         return ResponseEntity.ok(this.service.getLevel(movieId, BaseContextHandler.getUserId()));
     }
 

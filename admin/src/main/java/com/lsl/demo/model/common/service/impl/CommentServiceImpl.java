@@ -12,7 +12,8 @@ import com.lsl.demo.model.common.service.ICommentCollectService;
 import com.lsl.demo.model.common.service.ICommentCountService;
 import com.lsl.demo.model.common.service.ICommentService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.lsl.demo.utils.BaseContextHandler;
+import com.lsl.demo.model.sys.service.IRecommendService;
+import com.lsl.demo.utils.global.BaseContextHandler;
 import com.lsl.demo.utils.ConvertUtil;
 import com.lsl.demo.utils.db.PageBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -37,9 +37,10 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, CommentEntity
 
     @Autowired
     private ICommentCollectService collectService;
-
     @Autowired
     private ICommentCountService commentCountService;
+    @Autowired
+    private IRecommendService recommendService;
 
     @Override
     public String saveComment(CommentDto dto) {
@@ -48,6 +49,7 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, CommentEntity
         entity.setComment(comment);
         entity.setUserId(BaseContextHandler.getUserId());
         entity.setCollectIds(String.join(",", collectService.resolve(comment)));
+        Arrays.stream(entity.getCollectIds().split(",")).forEach(recommendService::comment);
         this.baseMapper.insert(entity);
         return entity.getId();
     }
@@ -71,7 +73,7 @@ public class CommentServiceImpl extends ServiceImpl<CommentMapper, CommentEntity
     }
 
     @Override
-    public List<CommentEntity> getUserCommentList(String userId) {
+    public List<CommentEntity> listUserComment(String userId) {
         QueryWrapper<CommentEntity> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("user_id", userId);
         queryWrapper.eq("valid", 0);

@@ -1,6 +1,6 @@
 package com.lsl.demo.common.interceptor;
 
-import com.lsl.demo.utils.BaseContextHandler;
+import com.lsl.demo.utils.global.BaseContextHandler;
 import org.eclipse.jetty.http.HttpMethod;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;

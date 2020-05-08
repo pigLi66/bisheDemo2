@@ -47,7 +47,7 @@ public interface ICommentService extends IService<CommentEntity> {
      * @param userId
      * @return
      */
-    List<CommentEntity> getUserCommentList(String userId);
+    List<CommentEntity> listUserComment(String userId);
 
     /**
      * 获取一个评论集下的一页评论

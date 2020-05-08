@@ -1,4 +1,4 @@
-package com.lsl.demo.utils;
+package com.lsl.demo.utils.global;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,6 +31,10 @@ public class BaseContextHandler {
             local.set(map);
         }
         return map.get(key);
+    }
+
+    public static boolean isLogin() {
+        return Objects.nonNull(BaseContextHandler.getUserId());
     }
 
     public static HttpServletRequest getRequest() {

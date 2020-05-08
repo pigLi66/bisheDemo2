@@ -8,7 +8,7 @@ import com.lsl.demo.common.enums.Operation;
 import com.lsl.demo.model.sys.dto.UserInfoDto;
 import com.lsl.demo.model.sys.entity.UserInfoEntity;
 import com.lsl.demo.model.sys.service.IUserInfoService;
-import com.lsl.demo.utils.BaseContextHandler;
+import com.lsl.demo.utils.global.BaseContextHandler;
 import com.lsl.demo.utils.validate.AddGroup;
 import com.lsl.demo.utils.validate.UpdateGroup;
 import com.lsl.demo.utils.validate.ValidatorUtil;

@@ -8,7 +8,7 @@ import com.lsl.demo.model.common.entity.MovieEntity;
 import com.lsl.demo.model.common.mapper.CommentCollectMapper;
 import com.lsl.demo.model.common.service.ICommentCollectService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.lsl.demo.utils.BaseContextHandler;
+import com.lsl.demo.utils.global.BaseContextHandler;
 import org.springframework.stereotype.Service;
 
 import java.util.*;

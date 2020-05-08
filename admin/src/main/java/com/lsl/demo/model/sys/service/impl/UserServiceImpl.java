@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.lsl.demo.common.exceptions.BaseException;
 import com.lsl.demo.common.server.UploadJpgToMyLinux;
-import com.lsl.demo.utils.BaseContextHandler;
+import com.lsl.demo.utils.global.BaseContextHandler;
 import com.lsl.demo.utils.ConvertUtil;
 import com.lsl.demo.common.annotation.aop.MyTest;
 import com.lsl.demo.common.exceptions.UserException;

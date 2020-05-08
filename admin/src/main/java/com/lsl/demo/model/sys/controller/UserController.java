@@ -3,7 +3,7 @@ package com.lsl.demo.model.sys.controller;
 
 import com.lsl.demo.common.base.controller.BaseController;
 import com.lsl.demo.model.sys.dto.LoginResponse;
-import com.lsl.demo.utils.BaseContextHandler;
+import com.lsl.demo.utils.global.BaseContextHandler;
 import com.lsl.demo.common.annotation.aop.MyTest;
 import com.lsl.demo.common.annotation.interceptor.Auth;
 import com.lsl.demo.common.token.Token;
@@ -64,6 +64,12 @@ public class UserController extends BaseController<UserEntity, IUserService> {
         loginResponse.setTimeOut(token.getTimeOut().toString());
         loginResponse.setMessage("注册成功");
         return ResponseEntity.ok(loginResponse);
+    }
+
+    @Auth
+    @GetMapping
+    public ResponseEntity isLogin() {
+        return ResponseEntity.ok(null);
     }
 
     @ApiOperation("获取用户的url")

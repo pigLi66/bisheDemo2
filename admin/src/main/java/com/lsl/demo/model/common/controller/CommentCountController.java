@@ -3,17 +3,15 @@ package com.lsl.demo.model.common.controller;
 
 import com.lsl.demo.common.base.controller.BaseController;
 import com.lsl.demo.model.common.dto.CommentCountDto;
-import com.lsl.demo.model.common.entity.CommentCollectEntity;
 import com.lsl.demo.model.common.entity.CommentCountEntity;
 import com.lsl.demo.model.common.service.ICommentCountService;
-import com.lsl.demo.utils.BaseContextHandler;
+import com.lsl.demo.utils.global.BaseContextHandler;
 import com.lsl.demo.common.annotation.interceptor.Auth;
 import com.lsl.demo.common.enums.Operation;
 import com.lsl.demo.common.exceptions.BusinessException;
 import com.lsl.demo.utils.validate.ValidatorUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

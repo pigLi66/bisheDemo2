@@ -3,6 +3,7 @@ package com.lsl.demo.model.common.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.lsl.demo.common.annotation.aop.MyTest;
 import com.lsl.demo.common.base.controller.BaseController;
 import com.lsl.demo.model.common.dto.CommentDto;
 import com.lsl.demo.model.common.dto.CommentInfoRSDto;
@@ -10,6 +11,8 @@ import com.lsl.demo.model.common.entity.CommentEntity;
 import com.lsl.demo.model.common.service.ICommentService;
 import com.lsl.demo.common.annotation.interceptor.Auth;
 import com.lsl.demo.common.enums.Operation;
+import com.lsl.demo.model.sys.service.IRecommendService;
+import com.lsl.demo.utils.global.BaseContextHandler;
 import com.lsl.demo.utils.validate.AddGroup;
 import com.lsl.demo.utils.validate.UpdateGroup;
 import com.lsl.demo.utils.validate.ValidatorUtil;
@@ -41,6 +44,12 @@ public class CommentController extends BaseController<CommentEntity, ICommentSer
     public ResponseEntity<String> saveComment(@RequestBody CommentDto dto) {
         ValidatorUtil.validateEntity(dto, AddGroup.class);
         return ResponseEntity.ok(this.service.saveComment(dto));
+    }
+
+    @GetMapping
+    @Auth
+    public ResponseEntity<List<CommentEntity>> getPage() {
+        return ResponseEntity.ok(this.service.listUserComment(BaseContextHandler.getUserId()));
     }
 
     @Auth

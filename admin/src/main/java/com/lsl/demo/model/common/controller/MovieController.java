@@ -3,19 +3,15 @@ package com.lsl.demo.model.common.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.lsl.demo.common.CommonConstants;
-import com.lsl.demo.common.base.controller.BaseCRUDController;
+import com.lsl.demo.common.base.controller.BaseController;
 import com.lsl.demo.model.common.dto.MovieAbstractDto;
-import com.lsl.demo.model.common.dto.MovieDto;
 import com.lsl.demo.model.common.dto.MovieInfoDto;
 import com.lsl.demo.model.common.entity.MovieEntity;
 import com.lsl.demo.model.common.service.IMovieService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,17 +27,16 @@ import java.util.List;
 @RestController
 @RequestMapping("/common/movie")
 public class MovieController
-        extends BaseCRUDController<MovieDto, MovieEntity, IMovieService> {
+        extends BaseController<MovieEntity, IMovieService> {
 
-    @Override
-    public ResponseEntity<String> deleteById(String id) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteById(@PathVariable String id) {
         return ResponseEntity.ok(CommonConstants.MSG_NON_API);
     }
 
-    @Override
     @ApiOperation("根据id获取电影的信息")
     @GetMapping("/{id}")
-    public ResponseEntity getById(@PathVariable String id) {
+    public ResponseEntity<MovieInfoDto> getById(@PathVariable String id) {
         return ResponseEntity.ok(this.service.getMovieInfoById(id));
     }
 
@@ -67,16 +62,6 @@ public class MovieController
     @GetMapping
     public ResponseEntity<List<MovieEntity>> getAll() {
         return ResponseEntity.ok(this.service.getAllMovieList());
-    }
-
-    @Override
-    protected Class<MovieEntity> getEntityClass() {
-        return MovieEntity.class;
-    }
-
-    @Override
-    protected MovieEntity getEntity() {
-        return new MovieEntity();
     }
 
 }

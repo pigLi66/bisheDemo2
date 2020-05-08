@@ -6,7 +6,7 @@ import com.lsl.demo.model.common.dto.ReplyCommentDto;
 import com.lsl.demo.model.common.dto.ReplyCommentInfoDto;
 import com.lsl.demo.model.common.entity.ReplyCommentEntity;
 import com.lsl.demo.model.common.service.IReplyCommentService;
-import com.lsl.demo.utils.BaseContextHandler;
+import com.lsl.demo.utils.global.BaseContextHandler;
 import com.lsl.demo.utils.ConvertUtil;
 import com.lsl.demo.common.annotation.interceptor.Auth;
 import com.lsl.demo.utils.validate.AddGroup;

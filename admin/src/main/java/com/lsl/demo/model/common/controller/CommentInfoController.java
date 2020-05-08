@@ -26,7 +26,7 @@ public class CommentInfoController extends BaseController<CommentEntity, ICommen
     @ApiOperation("根据用户id获取评论")
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<CommentEntity>> getUserComment(@PathVariable String userId) {
-        return ResponseEntity.ok(this.service.getUserCommentList(userId));
+        return ResponseEntity.ok(this.service.listUserComment(userId));
     }
 
     @ApiOperation("根据评论标识获取评论")

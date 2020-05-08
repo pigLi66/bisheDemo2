@@ -17,3 +17,10 @@ spring:
     multipart:
       max-file-size: 100MB
       max-request-size: 100MB
+#我是redis啊
+  redis:
+    # ip
+    host: 47.115.126.5
+    # 密码
+    password: 1998
+

@@ -1,11 +1,10 @@
 package com.lsl.demo.common.interceptor;
 
 import cn.hutool.core.util.StrUtil;
-import com.lsl.demo.utils.BaseContextHandler;
+import com.lsl.demo.utils.global.BaseContextHandler;
 import com.lsl.demo.common.annotation.interceptor.handler.Handler;
 import com.lsl.demo.common.token.Token;
 import com.lsl.demo.common.token.TokenBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;

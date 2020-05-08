@@ -1,8 +1,11 @@
 package com.lsl.demo.model.sys.dto;
 
+import com.lsl.demo.utils.validate.AddGroup;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+
+import javax.validation.constraints.NotBlank;
 
 /**
  * @author lisiliang
